@@ -10,10 +10,15 @@
     box-sizing: border-box;
     text-decoration: none;
     list-style-type: none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
     
 }
 
 body{
+
+    position: relative;
 
     width: 100%;
     max-width: 2000px;
