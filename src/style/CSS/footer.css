@@ -1,0 +1,49 @@
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 20px;
+  background-color: #000000;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .footer {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .footer {
+    font-size: 22px;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1500px) {
+  .footer {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 1501px) {
+  .footer {
+    font-size: 28px;
+  }
+}
+.footer__link__img {
+  width: 122px;
+  margin: 0px 0px 20px 0px;
+}
+.footer__text {
+  color: #FFFFFF;
+}

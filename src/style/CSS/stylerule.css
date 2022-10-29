@@ -1,0 +1,38 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+body {
+  width: 100%;
+  max-width: 2000px;
+  margin: 0px auto;
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  body {
+    padding: 20px;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1500px) {
+  body {
+    padding: 20px;
+  }
+}
+@media screen and (min-width: 1501px) {
+  body {
+    padding: 30px;
+  }
+}
+
+a {
+  color: black;
+}

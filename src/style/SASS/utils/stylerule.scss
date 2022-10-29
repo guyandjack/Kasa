@@ -1,0 +1,44 @@
+//Regle de style specifique à l' application "kasa"
+
+
+//import des mixins qui gere le responsive design
+@import "../utils/mixins/responsive/responsive.scss";
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    
+}
+
+body{
+
+    width: 100%;
+    max-width: 2000px;
+    margin: 0px auto;
+
+    //responsive medium screen
+    @include medium-screen {
+        padding: 20px;
+    }
+    //responsive medium screen
+    @include large-screen {
+        padding: 20px;
+    }
+    //responsive medium screen
+    @include x-large-screen {
+        padding: 20px;
+    }
+    //responsive medium screen
+    @include xx-large-screen {
+        padding: 30px;
+    }
+  
+}
+
+a{
+    color:black;
+}
+
