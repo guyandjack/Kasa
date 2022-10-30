@@ -1,0 +1,63 @@
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 335px;
+  height: 255px;
+  margin: 10px auto;
+  border-radius: 10px;
+  padding: 10px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF6060), to(#000000));
+  background: -o-linear-gradient(top, #FF6060 0%, #000000 100%);
+  background: linear-gradient(180deg, #FF6060 0%, #000000 100%);
+  font-size: 18px;
+  color: #FFFFFF;
+  -webkit-transition: all 250ms linear;
+  -o-transition: all 250ms linear;
+  transition: all 250ms linear;
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .card {
+    width: 340px;
+    height: 280px;
+    margin: 10px;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .card {
+    width: 340px;
+    height: 300px;
+    margin: 15px;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1500px) {
+  .card {
+    width: 340px;
+    height: 340px;
+    margin: 20px;
+  }
+}
+@media screen and (min-width: 1501px) {
+  .card {
+    width: 350px;
+    height: 350px;
+    margin: 25px;
+  }
+}
+.card__name > span {
+  font-size: 16px;
+}
+.card__rating {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
