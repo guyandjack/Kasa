@@ -19,7 +19,7 @@
     padding: 20px;
     border-radius: 25px;
 
-    background-color: map-get($colors-rule, bg-dark );
+    //background-color: map-get($colors-rule, bg-dark );
 
     transition: height 250ms linear;
 
@@ -54,26 +54,26 @@
         background-position: center ;
         background-repeat: no-repeat;
         background-size: cover;
-        background-image: url("../../../../asset/kasa-banner-600-px.png");
+        //background-image: url("../../../../asset/kasa-home-banner-600-px.png");
 
         transition: height 250ms linear;
         opacity: 0.7;
         
         //responsive large-screen
         @include large-screen{
-            background-image: url("../../../../asset/kasa-banner-900-px.png");
+            //background-image: url("../../../../asset/kasa-home-banner-900-px.png");
             height:150px;
         }
         
         //responsive x-large-screen
         @include x-large-screen{
-            background-image: url("../../../../asset/kasa-banner-1240-px.png");
+            //background-image: url("../../../../asset/kasa-home-banner-1300-px.png");
             height:223px;
         }
         
         //responsive xx-large-screen
         @include xx-large-screen{
-            background-image: url("../../../../asset/kasa-banner-1800-px.png");
+            //background-image: url("../../../../asset/kasa-home-banner-1800-px.png");
             height:250px;
         }
 
@@ -110,4 +110,99 @@
             font-size: 50px;
         }
     }
+}
+
+.banniere{
+
+    position: relative;
+    display: flex;
+    flex-flow:column nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    width: 100%;
+    height:111px;
+    margin: 20px 0px;
+    padding: 20px;
+    border-radius: 25px;
+
+    transition: height 250ms linear;
+
+    //responsive large-screen
+    @include large-screen{
+        height:150px;
+    }
+    
+    //responsive x-large-screen
+    @include x-large-screen{
+        
+        height:223px;
+    }
+    
+    //responsive xx-large-screen
+    @include xx-large-screen{
+        
+        height:250px;
+    }
+
+    &::after{
+
+            content: " ";
+            position: absolute;
+            
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            border-radius: 25px;
+            background-color: map-get($colors-rule, bg-dark);
+
+           
+            
+        }
+
+    
+
+    &__img{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        border-radius: 25px;
+        z-index: 5;
+        opacity: 0.7;
+        transition: height 250ms linear;
+
+    }
+
+    &__text{
+
+        z-index: 10;
+        width: 45%;
+        font-size: 24px;
+        color: map-get($colors-rule, text-light);
+
+        //responsive large-screen
+        @include medium-screen{
+            font-size: 28px;
+        }
+
+        //responsive large-screen
+        @include large-screen{
+            font-size: 36px;
+        }
+        
+        //responsive x-large-screen
+        @include x-large-screen{
+            font-size: 48px;
+        }
+        
+        //responsive xx-large-screen
+        @include xx-large-screen{
+            font-size: 50px;
+        }
+
+    }
+
 }

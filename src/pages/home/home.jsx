@@ -15,10 +15,10 @@ function Home(){
 
 
     return(
-        
+
         <div className="home">
         
-            <Banner />
+            <Banner pagename="home" text="Chez vous partout et ailleurs"/>
             
             <ul className="home__logements">
                 {logements.map((room) => {
