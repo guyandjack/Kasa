@@ -54,9 +54,9 @@ function Banner({ pagename, text }) {
   window.addEventListener("resize", ()=>setSizeScreen(window.innerWidth));
 
   return (
-    <div className="banniere">
-      <img className="banniere__img" src={imgUrl} alt="paysage"></img>
-      <p className="banniere__text">{sourceImage["title"]}</p>
+    <div className="banner">
+      <img className="banner__img" src={imgUrl} alt="paysage"></img>
+      <p className="banner__text">{sourceImage["title"]}</p>
     </div>
   );
 }

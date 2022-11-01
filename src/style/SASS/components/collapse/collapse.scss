@@ -1,0 +1,51 @@
+//feuille de style component collapse
+
+//import charte de couleur
+@import "../../utils/colors-rule/colors-rule.scss";
+
+//import des mixins qui gerent le responsive
+@import "../../utils/mixins/responsive/responsive.scss";
+
+
+
+.collapse{
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80%;
+    margin: 10px 0px;
+    font-size: 16px;
+
+    &__title{
+
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        width:100%;
+        padding: 10px;
+        font-size: 18px;
+        color:map-get($colors-rule, text-light );
+        background-color: map-get($colors-rule, primary-color );
+
+        &>span{
+            background-color: transparent;
+        }
+     
+    }
+
+    &__content{
+
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        width:100%;
+        padding:10px;
+        background-color: map-get($colors-rule, bg-light );
+        color:map-get($colors-rule, primary-color );
+
+    }
+}

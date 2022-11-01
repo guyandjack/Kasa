@@ -44,107 +44,9 @@
   width: 100%;
   height: 100%;
   border-radius: 25px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  -webkit-transition: height 250ms linear;
-  -o-transition: height 250ms linear;
-  transition: height 250ms linear;
-  opacity: 0.7;
-}
-@media screen and (min-width: 769px) and (max-width: 992px) {
-  .banner::after {
-    height: 150px;
-  }
-}
-@media screen and (min-width: 993px) and (max-width: 1500px) {
-  .banner::after {
-    height: 223px;
-  }
-}
-@media screen and (min-width: 1501px) {
-  .banner::after {
-    height: 250px;
-  }
-}
-.banner__text {
-  display: block;
-  position: relative;
-  z-index: 2;
-  width: 45%;
-  font-size: 24px;
-  color: #FFFFFF;
-}
-@media screen and (min-width: 576px) and (max-width: 768px) {
-  .banner__text {
-    font-size: 28px;
-  }
-}
-@media screen and (min-width: 769px) and (max-width: 992px) {
-  .banner__text {
-    font-size: 36px;
-  }
-}
-@media screen and (min-width: 993px) and (max-width: 1500px) {
-  .banner__text {
-    font-size: 48px;
-  }
-}
-@media screen and (min-width: 1501px) {
-  .banner__text {
-    font-size: 50px;
-  }
-}
-
-.banniere {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  width: 100%;
-  height: 111px;
-  margin: 20px 0px;
-  padding: 20px;
-  border-radius: 25px;
-  -webkit-transition: height 250ms linear;
-  -o-transition: height 250ms linear;
-  transition: height 250ms linear;
-}
-@media screen and (min-width: 769px) and (max-width: 992px) {
-  .banniere {
-    height: 150px;
-  }
-}
-@media screen and (min-width: 993px) and (max-width: 1500px) {
-  .banniere {
-    height: 223px;
-  }
-}
-@media screen and (min-width: 1501px) {
-  .banniere {
-    height: 250px;
-  }
-}
-.banniere::after {
-  content: " ";
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  border-radius: 25px;
   background-color: #000000;
 }
-.banniere__img {
+.banner__img {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -157,29 +59,29 @@
   -o-transition: height 250ms linear;
   transition: height 250ms linear;
 }
-.banniere__text {
+.banner__text {
   z-index: 10;
   width: 45%;
   font-size: 24px;
   color: #FFFFFF;
 }
 @media screen and (min-width: 576px) and (max-width: 768px) {
-  .banniere__text {
+  .banner__text {
     font-size: 28px;
   }
 }
 @media screen and (min-width: 769px) and (max-width: 992px) {
-  .banniere__text {
+  .banner__text {
     font-size: 36px;
   }
 }
 @media screen and (min-width: 993px) and (max-width: 1500px) {
-  .banniere__text {
+  .banner__text {
     font-size: 48px;
   }
 }
 @media screen and (min-width: 1501px) {
-  .banniere__text {
+  .banner__text {
     font-size: 50px;
   }
 }
