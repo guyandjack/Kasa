@@ -1,0 +1,83 @@
+//feuille de style du composant "Carroussel"
+
+
+
+.carroussel{
+    position: relative;
+    display:flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    
+
+    background-color: red;
+
+    &__container-chevron{
+        display:flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .chevron{
+        display:flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 5% 0px 5%;
+    }
+
+    &__compteur{
+        
+        position: absolute;
+        left:50%;
+        bottom: 10%;
+        transform: translateX(-50%); 
+        color: white;
+        font-size: 25px;
+        font-weight: 500;
+    }
+}
+
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-100%);
+    //opacity: 0;
+  }
+  25% {
+    transform: translateX(-75%);
+    //opacity: 1;
+  }
+  50% {
+    transform: translateX(-50%);
+    //opacity: 1;
+  }
+  75% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideFromRight {
+  0% {
+    transform: translateX(100%);
+    //opacity: 0;
+  }
+  25% {
+    transform: translateX(75%);
+    //opacity: 1;
+  }
+  50% {
+    transform: translateX(50%);
+    //opacity: 1;
+  }
+  75% {
+    transform: translateX(25%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}

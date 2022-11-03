@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 //import des pages
 import {Home} from "../src/pages/home/home.jsx";
-import {FicheLogement} from "../src/pages/fiche/fiche-logement.jsx";
+import {Logement} from "./pages/logement/logement.jsx";
 import {Apropos} from "../src/pages/apropos/apropos.jsx";
 import {Error} from "../src/pages/error/error.jsx";
 
@@ -25,7 +25,7 @@ function App() {
 
         <Route exact path="/" element={<Home />}></Route>
 
-        <Route  path="/logement" element={<FicheLogement />}></Route>
+        <Route  path="/logement/:_id" element={<Logement />}></Route>
 
         <Route exact path="/apropos" element={<Apropos />}></Route>
 

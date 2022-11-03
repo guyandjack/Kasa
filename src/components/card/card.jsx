@@ -21,20 +21,24 @@ const DivContainerImg = styled.div`
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  hover-flow: hidden;
+  overflow: hidden;
   background-image: url(${({ url }) => url});
 `;
 
 
-function Card({cover, title, rating, name}){
+function Card({cover, title, rating, name, id}){
+ 
+let logementId = id.toString();
+let urlLogement = "/logement/" + logementId;
+
     
     return (
-      <Link className="card" to="/logement">
-        <DivContainerImg url={cover}></DivContainerImg>
-        <p className="card__name">{name} <span>vous propose:</span> </p>
-        <p className="card__title">{title}</p>
-        <p className="card__rating">Avis client: {rating} / 5</p>
-      </Link>
+        <Link className="card" to={urlLogement}>
+          <DivContainerImg url={cover}></DivContainerImg>
+          <p className="card__name">{name} <span>vous propose:</span> </p>
+          <p className="card__title">{title}</p>
+          <p className="card__rating">Avis client: {rating} / 5</p>
+        </Link>
     );
 }
 
