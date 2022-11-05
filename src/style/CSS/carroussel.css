@@ -13,6 +13,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-radius: 10px;
   background-color: red;
 }
 .carroussel__container-chevron {
@@ -47,6 +48,20 @@
           align-items: center;
   margin: 0px 5% 0px 5%;
 }
+@media screen and (min-width: 993px) and (max-width: 1500px) {
+  .carroussel .chevron > img {
+    -webkit-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+@media screen and (min-width: 1501px) {
+  .carroussel .chevron > img {
+    -webkit-transform: scale(2);
+        -ms-transform: scale(2);
+            transform: scale(2);
+  }
+}
 .carroussel__compteur {
   position: absolute;
   left: 50%;
@@ -55,8 +70,22 @@
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
   color: white;
-  font-size: 25px;
+  font-size: 18px;
   font-weight: 500;
+}
+@media screen and (min-width: 993px) and (max-width: 1500px) {
+  .carroussel__compteur {
+    -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+@media screen and (min-width: 1501px) {
+  .carroussel__compteur {
+    -webkit-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+            transform: scale(1.5);
+  }
 }
 
 @-webkit-keyframes slideFromLeft {

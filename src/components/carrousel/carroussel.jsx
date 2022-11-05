@@ -5,15 +5,17 @@ import { useState } from "react";
 import styled from "styled-components";
 
 //import des images
-import flecheDroite from "../../asset/kasa-chevron-droite-slider.png";
-import flecheGauche from "../../asset/kasa-chevron-gauche-slider.png";
+import flecheDroite from "../../asset/kasa-chevron-droite-slider.svg";
+import flecheGauche from "../../asset/kasa-chevron-gauche-slider.svg";
 
 //import des feuilles de style
 import "../../style/CSS/carroussel.css";
 
 const DivSlider = styled.div`
   width: 80%;
-  height: 400px;
+  height: fit-content;
+  padding-top:20%;
+  padding-bottom: 20%;
 
   background-position: center;
   background-size: cover;
@@ -45,9 +47,6 @@ function Carroussel({slidepicture}){
           setIncrement(newIndex);
         }
 
-        console.log("valeur de increment dans clickleft : " + increment);
-        console.log(slidepicture[increment]);
-
         return "slideFromLeft";
     }
 
@@ -64,9 +63,7 @@ function Carroussel({slidepicture}){
           setIncrement(newIndex);
         }
 
-        console.log("valeur de increment dans clicright : " + increment);
-        console.log(slidepicture[increment]);
-
+        
         return "slideFromRight";
     }
 
@@ -75,7 +72,7 @@ function Carroussel({slidepicture}){
 
     return (
       <DivSlider img={slidepicture[increment]} className="carroussel">
-      
+
         <div className="carroussel__container-chevron">
 
           <div

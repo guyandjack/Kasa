@@ -1,5 +1,7 @@
 //feuille de style du composant "Carroussel"
 
+//import des mixin qui gerent le responsive
+@import "../../utils/mixins/responsive/responsive.scss";
 
 
 .carroussel{
@@ -8,6 +10,7 @@
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
     
 
     background-color: red;
@@ -26,7 +29,27 @@
         justify-content: center;
         align-items: center;
         margin: 0px 5% 0px 5%;
+
+        &>img{
+
+        //responsive design medium screen
+        //pas de modification
+        
+        //responsive design screen large
+        //pas de modification
+
+        //responsive design screen x-large
+        @include x-large-screen{
+           transform: scale(1.5) 
+        }
+
+        //responsive design screen xx-large
+        @include xx-large-screen{
+            transform: scale(2)
+        }
+            }
     }
+
 
     &__compteur{
         
@@ -35,10 +58,27 @@
         bottom: 10%;
         transform: translateX(-50%); 
         color: white;
-        font-size: 25px;
+        font-size: 18px;
         font-weight: 500;
-    }
+
+        //responsive design medium screen
+        //pas de modification
+        
+        //responsive design screen large
+        //pas de modification
+
+        //responsive design screen x-large
+        @include x-large-screen{
+            transform: scale(1.2); 
+        }
+
+        //responsive design screen xx-large
+        @include xx-large-screen{
+            transform: scale(1.5);
+        }
+            }
 }
+
 
 @keyframes slideFromLeft {
   0% {

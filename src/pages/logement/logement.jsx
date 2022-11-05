@@ -7,7 +7,8 @@ import {useParams} from "react-router-dom";
 import {logements} from "../../data/logements.js";
 
 //import des composants
-import {Carroussel} from "../../components/carrousel/carroussel.jsx"
+import {Carroussel} from "../../components/carrousel/carroussel.jsx";
+import { InfosLogement } from "../../components/infoslogement/infoslogement.jsx";
 
 //import feuille de style
 import "../../style/SASS/pages/logement/logement.scss";
@@ -19,13 +20,12 @@ function Logement(){
     let result = logements.find((logement) => logement.id === _id);
    
 
-    return(
-        <div className="logement">
-            
-            <Carroussel slidepicture={result.pictures}/>
-
-        </div>
-    )
+    return (
+      <div className="logement">
+        <Carroussel slidepicture={result.pictures} />
+        <InfosLogement info={result} />
+      </div>
+    );
 }
 
 export {Logement}
