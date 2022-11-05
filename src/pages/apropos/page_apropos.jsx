@@ -11,10 +11,10 @@ import "../../style/SASS/pages/apropos/apropos.scss";
 
 
 
-function Apropos(){
+function PageApropos(){
 
     return (
-    <React.Fragment>
+    
       <div className="apropos">
         
         <Banner
@@ -27,10 +27,10 @@ function Apropos(){
         <CollapseComponent type="respect" />
         <CollapseComponent type="service" />
         <CollapseComponent type="securite" />
+        
       </div>
-      <Footer />
-    </React.Fragment>
+      
     );
 }
 
-export {Apropos}
+export {PageApropos}

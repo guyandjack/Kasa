@@ -14,8 +14,8 @@ import "../../style/CSS/carroussel.css";
 const DivSlider = styled.div`
   width: 80%;
   height: fit-content;
-  padding-top:20%;
-  padding-bottom: 20%;
+  padding-top:15%;
+  padding-bottom: 15%;
 
   background-position: center;
   background-size: cover;

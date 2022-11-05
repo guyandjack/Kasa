@@ -63,10 +63,10 @@ function InfosLogement({info}){
                     } 
 
                     { 
-                      arrayOfGreyStars.map((star)=>{
+                      arrayOfGreyStars.map((star, index)=>{
                       
                         return(
-                            <img className="info-rating__star" src={greyStars} alt="etoile"></img>
+                            <img key={index} className="info-rating__star" src={greyStars} alt="etoile"></img>
                         )
                       }
                       )

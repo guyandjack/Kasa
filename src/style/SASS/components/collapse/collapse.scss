@@ -8,7 +8,7 @@
 
 
 
-.collapse{
+/*.collapse{
 
     display: flex;
     flex-flow: column nowrap;
@@ -26,14 +26,12 @@
         align-items: center;
         width:100%;
         padding: 10px;
+        border-radius:10px;
         font-size: 18px;
+        text-transform: capitalize;
         color:map-get($colors-rule, text-light );
         background-color: map-get($colors-rule, primary-color );
 
-        &>span{
-            background-color: transparent;
-        }
-     
     }
 
     &__content{
@@ -41,11 +39,75 @@
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         width:100%;
+        height:250px;
+        padding:10px;
+        border-radius:10px;
+        background-color: map-get($colors-rule, bg-light );
+        color:map-get($colors-rule, primary-color );
+
+    }
+
+    &__content--list{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width:100%;
+        height:250px;
+        border-radius:10px;
         padding:10px;
         background-color: map-get($colors-rule, bg-light );
         color:map-get($colors-rule, primary-color );
 
     }
+}*/
+
+.collapse{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80%;
+    margin: 10px 0px;
+    font-size: 16px;
+
+    &__title, &__content, &__content--list{
+
+        display: flex;
+        width:100%;
+        padding:10px;
+        border-radius:10px;
+        
+    }
+
+    &__content, &__content--list{
+        height:250px;
+        background-color: map-get($colors-rule, bg-light );
+        color:map-get($colors-rule, primary-color );
+    }
+
+    &__title{
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        text-transform: capitalize;
+        color:map-get($colors-rule, text-light );
+        background-color: map-get($colors-rule, primary-color );
+    }
+
+    &__content{
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    &__content--list{
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    
 }

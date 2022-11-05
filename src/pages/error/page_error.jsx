@@ -7,7 +7,7 @@ import {Link} from "react-router-dom";
 import "../../style/CSS/error.css";
 
 
-function Error(){
+function PageError(){
  return (
    <div className="error">
      <p className="error__title">404</p>
@@ -18,4 +18,4 @@ function Error(){
  );
 }
 
-export {Error}
+export {PageError}
