@@ -1,63 +1,79 @@
-// composant "banner"
+// Composant "Banner"
 
-//import de useState
+//Import du hook "useState"
 import  { useState } from "react";
 
-//importation des url des images pour les différents banner et taille d'ecran
+
+//Importation des url des images pour les différents banner et taille d'écran
 import { urlImgBanner } from "../../data/imgbanner/imgbanner.js";
 
 
-//import feuille de style
-import "../../style/SASS/components/banner/banner.scss";
+//Import feuille de style
+import "../../style/CSS/banner.css";
 
+//Import du module "styled-components"
+import styled from "styled-components"
 
-function Banner({ pagename, text }) {
+const StyledBanner = styled.div`
+
+  height: ${({ $bannerHeight }) => $bannerHeight};
+
+  transition: height 250ms linear;
+
+  &::before {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    content: "";
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image:url(${({ $bannerImage }) => $bannerImage});
+    opacity: 0.7;
+  }
+`;
+
+function Banner({ pagename, text, height }) {
 
   const [sizeScreen, setSizeScreen] = useState(window.innerWidth);
-
+ 
     
-  function selectSourceImageAndSize() {
+  function getTypeScreen() {
     
-    let data = {
-      nameOfPage: pagename,
-      title: text,
-    };
-
+       
     
     if (sizeScreen >= 0 && sizeScreen <= 768) {
-
-        data.displaySize = "medium" 
+        return "large"
     }
 
     if (sizeScreen >= 769 && sizeScreen <= 992) {
-
-        data.displaySize = "large"; 
+        return "large"
     }
 
     if (sizeScreen >= 993 && sizeScreen <= 1500) {
-
-        data.displaySize = "xlarge"; 
+        return "xlarge"
     }
 
     if (sizeScreen >= 1501) {
-
-        data.displaySize = "xxlarge"; 
+        return "xxlarge"        
     }
-
-    return data
 
   }
 
-  let sourceImage = selectSourceImageAndSize();
-  let imgUrl = urlImgBanner[sourceImage["nameOfPage"]][sourceImage["displaySize"]];
+  let typeScreen = getTypeScreen();
+  let imgUrl = urlImgBanner[pagename][typeScreen];
 
   window.addEventListener("resize", ()=>setSizeScreen(window.innerWidth));
 
   return (
-    <div className="banner">
-      <img className="banner__img" src={imgUrl} alt="paysage"></img>
-      <p className="banner__text">{sourceImage["title"]}</p>
-    </div>
+    <StyledBanner id="banner" $bannerHeight={height} $bannerImage={imgUrl}>
+
+      {text?(<p id="banner__text">{text}</p>): null}
+
+    </StyledBanner>
   );
 }
 

@@ -15,7 +15,6 @@
   margin-top: 10px;
   width: 80%;
   color: #FF6060;
-  border: 2px solid green;
 }
 @media screen and (min-width: 993px) and (max-width: 1500px) {
   .infoslogement {
@@ -60,7 +59,6 @@
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  border: 2px solid blue;
 }
 @media screen and (min-width: 993px) and (max-width: 1500px) {
   .infoslogement .infoslogement__container--1 {
@@ -126,7 +124,6 @@
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  border: 2px solid pink;
 }
 @media screen and (min-width: 993px) and (max-width: 1500px) {
   .infoslogement .infoslogement__container--2 {
@@ -207,7 +204,6 @@
       -ms-flex-align: center;
           align-items: center;
   font-size: 12px;
-  border: 2px solid orange;
 }
 .infoslogement .info-host__name {
   margin-right: 5px;

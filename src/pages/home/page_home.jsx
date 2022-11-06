@@ -1,17 +1,20 @@
-// genere la page "Home"
+/******************************* Page "Home"*************************************
+ *******************************************************************************/ 
 
-//import des composants enfants
-import React from "react";
+//Import des composants enfants
 import {Banner} from "../../components/banner/banner.jsx";
 import {Card} from "../../components/card/card.jsx";
-import {Footer} from "../../components/footer/footer.jsx";
 
-//import de la list de logement
+
+//Import de la list de logement
 import {logements} from "../../data/logements.js";
 
-//import des feuilles de style
+//Import des feuilles de style
 import "../../style/CSS/home.css";
 
+
+
+//Fonction "PageHome"
 
 function PageHome(){
 
@@ -21,7 +24,7 @@ function PageHome(){
         
         <div className="home">
         
-            <Banner pagename="home" text="Chez vous partout et ailleurs"/>
+            <Banner pagename="home" text="Chez vous, partout et ailleurs" height="111px"/>
             
             <ul className="home__logements">
                 {logements.map((room) => {

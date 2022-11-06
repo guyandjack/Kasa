@@ -1,31 +1,22 @@
 // composant "infologement" qui contient les informations relatives au logement selectionné
 
-//import des images
-import redStars from "../../asset/rating-red-star.svg";
-import greyStars from "../../asset/rating-grey-star.svg";
+//Import des composants enfants
+import {Rating} from "../rating/rating.jsx"
+
 
 //import feuille de style
 import "../../style/SASS/components/infoslogement/infoslogement.scss";
 
+
+
+//Fonction "InfosLogement"
+
+
 function InfosLogement({info}){
 
-    // determine l' affichage du rating rating
-    let nbrRedStars = parseInt(info.rating, 10);
-    let nbrGreyStars = (5 - nbrRedStars);
-    let arrayOfRedStars = [];
-    let arrayOfGreyStars = [];
-
-    for(let i=1; i<= nbrRedStars; i++){
-        arrayOfRedStars.push("redstars");
-    }
-
-    for(let i=1; i<= nbrGreyStars; i++){
-        
-        arrayOfGreyStars.push("greystar")
-    }
+    let valueRating = info.rating;
+    let totalRating = 5;
     
-    
-
     return(
         <div className="infoslogement">
 
@@ -50,31 +41,7 @@ function InfosLogement({info}){
 
             <div className="infoslogement__container--2">
 
-                <div className="info-rating">
-
-                    { 
-                      arrayOfRedStars.map((star, index)=>{
-                      
-                        return(
-                            <img className="info-rating__star" key={index} src={redStars} alt="etoile"></img>
-                        )
-                      }
-                      )
-                    } 
-
-                    { 
-                      arrayOfGreyStars.map((star, index)=>{
-                      
-                        return(
-                            <img key={index} className="info-rating__star" src={greyStars} alt="etoile"></img>
-                        )
-                      }
-                      )
-                    } 
-                        
-                    
-
-                </div>
+                <Rating className="info-rating" valuerating={valueRating} totalrating={totalRating} />
 
                 <div className="info-host">
 

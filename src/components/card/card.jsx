@@ -6,6 +6,9 @@ import PropTypes from "prop-types";
 //import du module "Link"
 import {Link} from "react-router-dom";
 
+//import des composants enfants
+import {Rating} from "../rating/rating.jsx";
+
 //import feuille de style
 import "../../style/CSS/card.css";
 
@@ -37,7 +40,8 @@ let urlLogement = "/logement/" + logementId;
           <DivContainerImg url={cover}></DivContainerImg>
           <p className="card__name">{name} <span>vous propose:</span> </p>
           <p className="card__title">{title}</p>
-          <p className="card__rating">Avis client: {rating} / 5</p>
+          <p >Avis client: </p>
+          <Rating className="card__rating" valuerating={rating} totalrating={5} />
         </Link>
     );
 }

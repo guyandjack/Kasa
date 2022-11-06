@@ -1,30 +1,29 @@
-// feuille de style composant "banner"
+// Feuille de style du composant "Banner"
 
-//import charte de couleur
+//Import de la charte de couleur
 @import "../../utils/colors-rule/colors-rule.scss";
 
-//import des mixin qui gerent le responsive design
-@import "../../utils/mixins/responsive/responsive.scss";
+//Import des mixins qui gerent le responsive design
+@import "../../utils/mixins/responsive/_responsive.scss";
 
-.banner{
+#banner{
 
     position: relative;
     display: flex;
     flex-flow:column nowrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: flex-start;
 
     width: 100%;
-    height:111px;
     margin: 20px 0px;
     padding: 20px;
     border-radius: 25px;
-
-    transition: height 250ms linear;
+    background-color: map-get($colors-rule, bg-dark);
+    
 
     //responsive large-screen
     @include large-screen{
-        height:150px;
+        height:223px;
     }
     
     //responsive x-large-screen
@@ -39,63 +38,33 @@
         height:250px;
     }
 
-    &::after{
-
-            content: " ";
-            position: absolute;
-            
-            top: 0px;
-            left: 0px;
-            width: 100%;
-            height: 100%;
-            border-radius: 25px;
-            background-color: map-get($colors-rule, bg-dark);
-
-           
-            
-        }
-
-    
-
-    &__img{
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        width: 100%;
-        height: 100%;
-        border-radius: 25px;
-        z-index: 5;
-        opacity: 0.7;
-        transition: height 250ms linear;
-
-    }
-
+   
     &__text{
 
-        z-index: 10;
-        width: 45%;
-        font-size: 24px;
-        color: map-get($colors-rule, text-light);
+    z-index: 10;
+    width: 45%;
+    font-size: 24px;
+    color: map-get($colors-rule, text-light);
 
-        //responsive large-screen
-        @include medium-screen{
-            font-size: 28px;
-        }
+    //responsive large-screen
+    @include medium-screen{
+        font-size: 28px;
+    }
 
-        //responsive large-screen
-        @include large-screen{
-            font-size: 36px;
-        }
-        
-        //responsive x-large-screen
-        @include x-large-screen{
-            font-size: 48px;
-        }
-        
-        //responsive xx-large-screen
-        @include xx-large-screen{
-            font-size: 50px;
-        }
+    //responsive large-screen
+    @include large-screen{
+        font-size: 36px;
+    }
+    
+    //responsive x-large-screen
+    @include x-large-screen{
+        font-size: 48px;
+    }
+    
+    //responsive xx-large-screen
+    @include xx-large-screen{
+        font-size: 50px;
+    }
 
     }
 

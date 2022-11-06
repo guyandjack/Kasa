@@ -1,4 +1,5 @@
-//tableau des url pour les image des banner
+//Objet qui contient les url des differents types et tailles d' images pour le composant "Banner"
+
 const urlImgBanner = {
 
   home: {
