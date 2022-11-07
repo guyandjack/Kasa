@@ -6,66 +6,58 @@
 //Import des mixins qui gerent le responsive design
 @import "../../utils/mixins/responsive/_responsive.scss";
 
-#banner{
+#banner {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
 
-    position: relative;
-    display: flex;
-    flex-flow:column nowrap;
-    justify-content: center;
-    align-items: flex-start;
+  width: 100%;
+  margin: 20px 0px;
+  padding: 20px;
+  border-radius: 25px;
+  background-color: map-get($colors-rule, bg-dark);
 
-    width: 100%;
-    margin: 20px 0px;
-    padding: 20px;
-    border-radius: 25px;
-    background-color: map-get($colors-rule, bg-dark);
-    
+  //responsive large-screen
+  @include large-screen {
+    height: 223px;
+  }
 
-    //responsive large-screen
-    @include large-screen{
-        height:223px;
-    }
-    
-    //responsive x-large-screen
-    @include x-large-screen{
-        
-        height:223px;
-    }
-    
-    //responsive xx-large-screen
-    @include xx-large-screen{
-        
-        height:250px;
-    }
+  //responsive x-large-screen
+  @include x-large-screen {
+    height: 223px;
+  }
 
-   
-    &__text{
+  //responsive xx-large-screen
+  @include xx-large-screen {
+    height: 250px;
+  }
 
+  &__text {
     z-index: 10;
     width: 45%;
     font-size: 24px;
     color: map-get($colors-rule, text-light);
 
     //responsive large-screen
-    @include medium-screen{
-        font-size: 28px;
+    @include medium-screen {
+      font-size: 28px;
     }
 
     //responsive large-screen
-    @include large-screen{
-        font-size: 36px;
+    @include large-screen {
+      font-size: 36px;
     }
-    
+
     //responsive x-large-screen
-    @include x-large-screen{
-        font-size: 48px;
+    @include x-large-screen {
+      font-size: 48px;
     }
-    
+
     //responsive xx-large-screen
-    @include xx-large-screen{
-        font-size: 50px;
+    @include xx-large-screen {
+      font-size: 50px;
     }
-
-    }
-
+  }
 }

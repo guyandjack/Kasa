@@ -1,25 +1,22 @@
-//import module react
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+//Import module react
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-//import de l' application
-import {App} from "./App.js"
+//Import de l' application
+import { App } from "./App.js";
 
-//import feuille de style
-import './index.css';
+//Import feuille de style
+import "./index.css";
 
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-
-  root.render(
+root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
- 
 );
-
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

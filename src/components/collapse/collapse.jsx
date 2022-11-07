@@ -1,71 +1,70 @@
 // genere le composant collapse
 
-//import useState
-import {useState} from "react";
+//Import useState
+import { useState } from "react";
 
-//import du contenu des composants "collapse" pour la page "A propos"
-import {contentCollapse} from "../../data/textforcollapse/textforcollapse.js";
+//Import du contenu des composants "collapse" pour la page "A propos"
+import { contentCollapse } from "../../data/textforcollapse/textforcollapse.js";
 
-//import des feuille de style
+//Import des feuille de style
 import "../../style/CSS/collapse.css";
 
-//import image
+//Import image
 import chevronHaut from "../../asset/kasa-collapse-chevron-haut.png";
 import chevronBas from "../../asset/kasa-collapse-chevron-bas.png";
 
-function CollapseComponent({type, info_description, info_equipments}){
+function CollapseComponent({ type, info_description, info_equipments }) {
+  const [display, setDisplay] = useState(false);
 
-    const [display, setDisplay] = useState(true);
-   
-    let title = null;
-    let content = null;
-    let isList = false;
+  let title = null;
+  let content = null;
+  let isList = false;
 
-    if(type){
+  if (type) {
+    title = contentCollapse[type]["title"];
+    content = contentCollapse[type]["content"];
+  }
 
-        title = contentCollapse[type]["title"];
-        content = contentCollapse[type]["content"];
-    }
+  if (info_description) {
+    title = "description";
+    content = info_description;
+  }
 
-    if(info_description){
+  if (info_equipments) {
+    title = "equipments";
+    content = info_equipments;
+    isList = true;
 
-        title = "description";
-        content = info_description;
-    }
+    console.log(typeof content);
+  }
 
-    if(info_equipments){
-
-      title = "equipments";
-      content = info_equipments;
-      isList = true;
-      
-      console.log(typeof content)
-    }
-
-
-    return (
-      <div className="collapse">
-        <div
-          className="collapse__title"
-          onClick={() => (display ? setDisplay(false) : setDisplay(true))}
-        >
-          {title}
-          {display ? (
-            <img src={chevronHaut} alt="fleche"></img>
-          ) : (
-            <img src={chevronBas} alt="fleche"></img>
-          )}
-        </div>
-
+  return (
+    <div className="collapse">
+      <div
+        className="collapse__title"
+        onClick={() => (display ? setDisplay(false) : setDisplay(true))}
+      >
+        {title}
         {display ? (
-          isList? ( <ul className="collapse__content--list">{content.map((gear)=>{return<li key={gear}>{gear}</li>})}</ul>)
-          : (<div className="collapse__content">{content}</div>)
-        ) : null}
+          <img src={chevronHaut} alt="fleche"></img>
+        ) : (
+          <img src={chevronBas} alt="fleche"></img>
+        )}
       </div>
-    );
-    
 
-  
+      {display ? (
+        isList ? (
+          <ul className="collapse__content--list">
+            {content.map((gear) => {
+              return <li key={gear}>{gear}</li>;
+            })}
+          </ul>
+        ) : (
+          <div className="collapse__content">{content}</div>
+        )
+      ) : null}
+    </div>
+  );
 }
 
-export {CollapseComponent}
+export { CollapseComponent };

@@ -1,113 +1,87 @@
 //feuille de style component collapse
 
-//import charte de couleur
+//Import charte de couleur
 @import "../../utils/colors-rule/colors-rule.scss";
 
-//import des mixins qui gerent le responsive
+//Import des mixins qui gerent le responsive
 @import "../../utils/mixins/responsive/responsive.scss";
 
+@keyframes slideDown {
+  
+    0%{
+      height: 0px;
+      opacity: 0;
+    }
+    100%{
+      height: 250px;
+      opacity: 1;
+    }
+   
+}
 
+.collapse {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 80%;
+  height: fit-content;
+  margin: 10px 0px;
+  font-size: 16px;
 
-/*.collapse{
+  //responsive large sreen
+  @include large-screen{
+    width: 45%;
+    font-size: 18px;
+  }
+  //responsive xlarge sreen
+  @include x-large-screen{
+    width: 45%;
+    font-size: 18px;
+  }
+  //responsive xx-large sreen
+  @include xx-large-screen{
+    width: 45%;
+    font-size: 20px;
+  }
+     
 
+  &__title,
+  &__content,
+  &__content--list {
     display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    width: 80%;
-    margin: 10px 0px;
-    font-size: 16px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+  }
 
-    &__title{
-
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        align-items: center;
-        width:100%;
-        padding: 10px;
-        border-radius:10px;
-        font-size: 18px;
-        text-transform: capitalize;
-        color:map-get($colors-rule, text-light );
-        background-color: map-get($colors-rule, primary-color );
-
-    }
-
-    &__content{
-
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        align-items: flex-start;
-        width:100%;
-        height:250px;
-        padding:10px;
-        border-radius:10px;
-        background-color: map-get($colors-rule, bg-light );
-        color:map-get($colors-rule, primary-color );
-
-    }
-
-    &__content--list{
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: flex-start;
-        align-items: flex-start;
-        width:100%;
-        height:250px;
-        border-radius:10px;
-        padding:10px;
-        background-color: map-get($colors-rule, bg-light );
-        color:map-get($colors-rule, primary-color );
-
-    }
-}*/
-
-.collapse{
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    width: 80%;
-    margin: 10px 0px;
-    font-size: 16px;
-
-    &__title, &__content, &__content--list{
-
-        display: flex;
-        width:100%;
-        padding:10px;
-        border-radius:10px;
-        
-    }
-
-    &__content, &__content--list{
-        height:250px;
-        background-color: map-get($colors-rule, bg-light );
-        color:map-get($colors-rule, primary-color );
-    }
-
-    &__title{
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        align-items: center;
-        text-transform: capitalize;
-        color:map-get($colors-rule, text-light );
-        background-color: map-get($colors-rule, primary-color );
-    }
-
-    &__content{
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-
-    &__content--list{
-        flex-flow: column nowrap;
-        justify-content: flex-start;
-        align-items: flex-start;
-    }
-
+  &__content,
+  &__content--list {
+   
+    background-color: map-get($colors-rule, bg-light);
+    color: map-get($colors-rule, primary-color);
+    animation: slideDown 300ms linear both ;
     
+  }
+
+  &__title {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: capitalize;
+    color: map-get($colors-rule, text-light);
+    background-color: map-get($colors-rule, primary-color);
+  }
+
+  &__content {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__content--list {
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 }

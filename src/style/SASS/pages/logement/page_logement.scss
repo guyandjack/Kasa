@@ -1,68 +1,63 @@
 // feuille de style pour la page logement
 
-//import des mixin qui gerent le responsive
+//Import des mixin qui gerent le responsive
 @import "../../utils/mixins/responsive/responsive.scss";
 
-.logement{
+.logement {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  width: 100%;
+  //padding: 20px;
+
+  &__collapse-container {
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
-
     width: 100%;
-    //padding: 20px;
 
-    &__collapse-container{
-
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: flex-start;
-        align-items: center;
-        width: 100%;
-
-        //responsive medium-screen
-        //pas de modification
-        //responsive large-screen
-        @include large-screen{
-            flex-flow: row nowrap;
-            justify-content: space-between;
-            align-items: flex-start;
-            width: 80%;
-        }
-        //responsive x-large-screen
-        @include x-large-screen{
-            flex-flow: row nowrap;
-            justify-content: space-between;
-            align-items: flex-start;
-            width: 80%;
-        }
-        //responsive xx-large-screen
-        @include xx-large-screen{
-            flex-flow: row nowrap;
-            justify-content: space-between;
-            align-items: flex-start;
-            width: 80%;
-        }
-
-        .collapse-logement{
-
-            //responsive medium-screen
-            //pas de modification
-            //responsive large-screen
-            @include large-screen{
-              width: 35%;  
-                
-            }
-            //responsive x-large-screen
-            @include x-large-screen{
-               width: 35%; 
-                
-            }
-            //responsive xx-large-screen
-            @include xx-large-screen{
-                width: 35%;
-            }
-
-        }
+    //responsive medium-screen
+    //pas de modification
+    //responsive large-screen
+    @include large-screen {
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 80%;
     }
+    //responsive x-large-screen
+    @include x-large-screen {
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 80%;
+    }
+    //responsive xx-large-screen
+    @include xx-large-screen {
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 80%;
+    }
+
+    .collapse-logement {
+      //responsive medium-screen
+      //pas de modification
+      //responsive large-screen
+      @include large-screen {
+        width: 35%;
+      }
+      //responsive x-large-screen
+      @include x-large-screen {
+        width: 35%;
+      }
+      //responsive xx-large-screen
+      @include xx-large-screen {
+        width: 35%;
+      }
+    }
+  }
 }

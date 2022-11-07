@@ -1,13 +1,15 @@
 //Composant "Rating"
 
-//import des images
+//Import des images
 import redStars from "../../asset/rating-red-star.svg";
 import greyStars from "../../asset/rating-grey-star.svg";
 
+//Import feuille de style
+import "../../style/CSS/rating.css";
+
 //Fonction "Rating"
 
-function Rating({valuerating, totalrating}){
-
+function Rating({ valuerating, totalrating }) {
   // determine l' affichage du rating rating
   let nbrRedStars = parseInt(valuerating, 10);
   let nbrGreyStars = totalrating - nbrRedStars;
@@ -21,7 +23,7 @@ function Rating({valuerating, totalrating}){
   for (let i = 1; i <= nbrGreyStars; i++) {
     arrayOfGreyStars.push("greystar");
   }
-  
+
   return (
     <div className="rating">
       {arrayOfRedStars.map((star, index) => {
@@ -49,4 +51,4 @@ function Rating({valuerating, totalrating}){
   );
 }
 
-export {Rating}
+export { Rating };

@@ -1,51 +1,42 @@
 //feuille de style pour le composant page "Home"
 
-//import des mixin qui gerent le responsive design
+//Import des mixin qui gerent le responsive design
 @import "../utils/mixins/responsive/responsive.scss";
 
+.home {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
 
+  width: 100%;
 
-.home{
+  &__logements {
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
 
     width: 100%;
-    
-    
-    &__logements{
 
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: flex-start;
-        align-items: center;
-
-        width: 100%;
-
-        //responsive large screen
-        @include large-screen {
-            flex-flow: row wrap ;
-            justify-content: space-around;
-
-        }
-
-        //responsive x-large screen
-        @include x-large-screen {
-            flex-flow: row wrap ;
-            justify-content: space-around;
-            width: 80%;
-        }
-
-        //responsive xx-large screen
-        @include xx-large-screen {
-            flex-flow: row wrap;
-            justify-content: space-around;
-            width: 75%;
-        }
-
-        
-
+    //responsive large screen
+    @include large-screen {
+      flex-flow: row wrap;
+      justify-content: space-around;
     }
-    
+
+    //responsive x-large screen
+    @include x-large-screen {
+      flex-flow: row wrap;
+      justify-content: space-around;
+      width: 80%;
+    }
+
+    //responsive xx-large screen
+    @include xx-large-screen {
+      flex-flow: row wrap;
+      justify-content: space-around;
+      width: 75%;
+    }
+  }
 }

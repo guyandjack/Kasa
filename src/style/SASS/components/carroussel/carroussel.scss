@@ -1,84 +1,78 @@
 //feuille de style du composant "Carroussel"
 
-//import des mixin qui gerent le responsive
+//Import des mixin qui gerent le responsive
 @import "../../utils/mixins/responsive/responsive.scss";
 
+.carroussel {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
 
-.carroussel{
-    position: relative;
-    display:flex;
-    flex-flow: column nowrap;
+  background-color: red;
+
+  &__container-chevron {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .chevron {
+    display: flex;
+    flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
-    
+    margin: 0px 5% 0px 5%;
 
-    background-color: red;
+    & > img {
+      //responsive design medium screen
+      //pas de modification
 
-    &__container-chevron{
-        display:flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
+      //responsive design screen large
+      //pas de modification
+
+      //responsive design screen x-large
+      @include x-large-screen {
+        transform: scale(1.5);
+      }
+
+      //responsive design screen xx-large
+      @include xx-large-screen {
+        transform: scale(2);
+      }
+    }
+  }
+
+  &__compteur {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+
+    //responsive design medium screen
+    //pas de modification
+
+    //responsive design screen large
+    //pas de modification
+
+    //responsive design screen x-large
+    @include x-large-screen {
+      transform: scale(1.2);
     }
 
-    .chevron{
-        display:flex;
-        flex-flow: row nowrap;
-        justify-content: center;
-        align-items: center;
-        margin: 0px 5% 0px 5%;
-
-        &>img{
-
-        //responsive design medium screen
-        //pas de modification
-        
-        //responsive design screen large
-        //pas de modification
-
-        //responsive design screen x-large
-        @include x-large-screen{
-           transform: scale(1.5) 
-        }
-
-        //responsive design screen xx-large
-        @include xx-large-screen{
-            transform: scale(2)
-        }
-            }
+    //responsive design screen xx-large
+    @include xx-large-screen {
+      transform: scale(1.5);
     }
-
-
-    &__compteur{
-        
-        position: absolute;
-        left:50%;
-        bottom: 10%;
-        transform: translateX(-50%); 
-        color: white;
-        font-size: 18px;
-        font-weight: 500;
-
-        //responsive design medium screen
-        //pas de modification
-        
-        //responsive design screen large
-        //pas de modification
-
-        //responsive design screen x-large
-        @include x-large-screen{
-            transform: scale(1.2); 
-        }
-
-        //responsive design screen xx-large
-        @include xx-large-screen{
-            transform: scale(1.5);
-        }
-            }
+  }
 }
-
 
 @keyframes slideFromLeft {
   0% {

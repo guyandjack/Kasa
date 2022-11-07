@@ -1,20 +1,20 @@
 // composant "carroussel"
 
-//import des differents modules
+//Import des differents modules
 import { useState } from "react";
 import styled from "styled-components";
 
-//import des images
+//Import des images
 import flecheDroite from "../../asset/kasa-chevron-droite-slider.svg";
 import flecheGauche from "../../asset/kasa-chevron-gauche-slider.svg";
 
-//import des feuilles de style
+//Import des feuilles de style
 import "../../style/CSS/carroussel.css";
 
 const DivSlider = styled.div`
   width: 80%;
   height: fit-content;
-  padding-top:15%;
+  padding-top: 15%;
   padding-bottom: 15%;
 
   background-position: center;
@@ -23,81 +23,74 @@ const DivSlider = styled.div`
   overflow: hidden;
   background-image: url(${({ img }) => img});
 
-  animation-name: ${({way}) => way};
+  animation-name: ${({ way }) => way};
   animation-duration: 0.5s;
   animation-timing-function: linear;
-
 `;
 
-function Carroussel({slidepicture}){
+function Carroussel({ slidepicture }) {
 
-    
-    const [increment, setIncrement] = useState(0);
+  const [increment, setIncrement] = useState(0);
 
-    function clickLeft(){
+  let displayChevron = (slidepicture.length == 1)? false : true;
 
-
-        if (increment > 0 ) {
-          let newIndex = increment - 1;
-          setIncrement(newIndex);
-        }
-
-        if (increment < 1) {
-          let newIndex =( (slidepicture.length) - 1);
-          setIncrement(newIndex);
-        }
-
-        return "slideFromLeft";
+  function clickLeft() {
+    if (increment > 0) {
+      let newIndex = increment - 1;
+      setIncrement(newIndex);
     }
 
-    function clickRight(){
+    if (increment < 1) {
+      let newIndex = slidepicture.length - 1;
+      setIncrement(newIndex);
+    }
 
-        if (increment < ((slidepicture.length) - 1)) {
+    return "slideFromLeft";
+  }
 
-          let newIndex = (increment + 1)
-          setIncrement(newIndex);
-        }
+  function clickRight() {
+    if (increment < slidepicture.length - 1) {
+      let newIndex = increment + 1;
+      setIncrement(newIndex);
+    }
 
-        if (increment >= ((slidepicture.length) - 1)) {
-          let newIndex = 0;
-          setIncrement(newIndex);
-        }
+    if (increment >= slidepicture.length - 1) {
+      let newIndex = 0;
+      setIncrement(newIndex);
+    }
+
+    return "slideFromRight";
+  }
+
+  return (
+    <DivSlider img={slidepicture[increment]} className="carroussel">
+      
+
+      {
+        displayChevron? (
+
+          <div className="carroussel__container-chevron">
+
+            <div className="chevron" value="left" onClick={() => clickLeft()}>
+              <img src={flecheGauche} alt="fleche defilement à gauche"></img>
+            </div>
+
+            <div className="chevron" value="right" onClick={() => clickRight()}>
+              <img src={flecheDroite} alt="fleche defilement à droite"></img>
+            </div>
+          
+          </div>) : ( null)
+      }
 
         
-        return "slideFromRight";
-    }
 
-    
-    
+      
 
-    return (
-      <DivSlider img={slidepicture[increment]} className="carroussel">
-
-        <div className="carroussel__container-chevron">
-
-          <div
-            className="chevron"
-            value="left"
-            onClick={() => clickLeft()}
-          >
-            <img src={flecheGauche} alt="fleche defilement à gauche"></img>
-          </div>
-
-          <div
-            className="chevron"
-            value="right"
-            onClick={() => clickRight()}
-          >
-            <img src={flecheDroite} alt="fleche defilement à droite"></img>
-          </div>
-
-        </div>
-
-        <p className="carroussel__compteur">
-          {increment + 1} / {slidepicture.length}
-        </p>
-      </DivSlider>
-    );
+      <p className="carroussel__compteur">
+        {increment + 1} / {slidepicture.length}
+      </p>
+    </DivSlider>
+  );
 }
 
-export {Carroussel}
+export { Carroussel };

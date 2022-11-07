@@ -1,48 +1,46 @@
 //feuille de style du footer
 
-//import de la charte de couleur
+//Import de la charte de couleur
 @import "../../utils/colors-rule/colors-rule.scss";
 
-//import des mixins qui gerent le responsive design
+//Import des mixins qui gerent le responsive design
 @import "../../utils/mixins/responsive/_responsive.scss";
 
-.footer{
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    width:100%;
-    //height: 180px;
-    padding: 20px;
-    background-color: map-get($colors-rule, bg-dark);
+.footer {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  //height: 180px;
+  padding: 20px;
+  background-color: map-get($colors-rule, bg-dark);
 
-    
-    font-size: 16px;
+  font-size: 16px;
 
-    //responsive medium-screen
-    @include medium-screen{
-        font-size:18px ;
-    }
-    //responsive large-screen
-    @include large-screen{
-        font-size: 22px;
-    }
-    //responsive x-large-screen
-    @include x-large-screen{
-        font-size: 24px;
-    }
-    //responsive xx-large-screen
-    @include xx-large-screen{
-        font-size:28px ;
-    }
+  //responsive medium-screen
+  @include medium-screen {
+    font-size: 18px;
+  }
+  //responsive large-screen
+  @include large-screen {
+    font-size: 22px;
+  }
+  //responsive x-large-screen
+  @include x-large-screen {
+    font-size: 24px;
+  }
+  //responsive xx-large-screen
+  @include xx-large-screen {
+    font-size: 28px;
+  }
 
+  &__link__img {
+    width: 122px;
+    margin: 0px 0px 20px 0px;
+  }
 
-    &__link__img{
-        width:122px;
-        margin: 0px 0px 20px 0px;
-    }
-
-    &__text{
-        color:map-get($colors-rule, text-light)
-    }
+  &__text {
+    color: map-get($colors-rule, text-light);
+  }
 }
