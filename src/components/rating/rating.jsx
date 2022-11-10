@@ -13,40 +13,40 @@ function Rating({ valuerating, totalrating }) {
   // determine l' affichage du rating rating
   let nbrRedStars = parseInt(valuerating, 10);
   let nbrGreyStars = totalrating - nbrRedStars;
-  let arrayOfRedStars = [];
-  let arrayOfGreyStars = [];
+  let arrayOfRatingStars = [];
+  
+
+  const etoileRouge = (
+    <img
+      className="info-rating__star"
+      //key={index}
+      src={redStars}
+      alt="etoile"
+    ></img>
+  );
+
+  const etoileGrise = (
+    <img
+      
+      className="info-rating__star"
+      src={greyStars}
+      alt="etoile"
+    ></img>
+  );
 
   for (let i = 1; i <= nbrRedStars; i++) {
-    arrayOfRedStars.push("redstars");
+    arrayOfRatingStars.push(etoileRouge);
   }
 
   for (let i = 1; i <= nbrGreyStars; i++) {
-    arrayOfGreyStars.push("greystar");
+    arrayOfRatingStars.push(etoileGrise);
   }
 
   return (
     <div className="rating">
-      {arrayOfRedStars.map((star, index) => {
-        return (
-          <img
-            className="info-rating__star"
-            key={index}
-            src={redStars}
-            alt="etoile"
-          ></img>
-        );
-      })}
-
-      {arrayOfGreyStars.map((star, index) => {
-        return (
-          <img
-            key={index}
-            className="info-rating__star"
-            src={greyStars}
-            alt="etoile"
-          ></img>
-        );
-      })}
+      
+      {arrayOfRatingStars}
+      
     </div>
   );
 }

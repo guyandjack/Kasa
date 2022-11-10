@@ -23,16 +23,16 @@ const DivSlider = styled.div`
   overflow: hidden;
   background-image: url(${({ img }) => img});
 
-  animation-name: ${({ way }) => way};
+  /*animation-name: ${({ way }) => way};
   animation-duration: 0.5s;
-  animation-timing-function: linear;
+  animation-timing-function: linear;*/
 `;
 
 function Carroussel({ slidepicture }) {
 
   const [increment, setIncrement] = useState(0);
 
-  let displayChevron = (slidepicture.length == 1)? false : true;
+  let displayChevron = (slidepicture.length <= 1)? false : true;
 
   function clickLeft() {
     if (increment > 0) {
@@ -45,7 +45,7 @@ function Carroussel({ slidepicture }) {
       setIncrement(newIndex);
     }
 
-    return "slideFromLeft";
+    //return "slideFromLeft";
   }
 
   function clickRight() {
@@ -59,7 +59,7 @@ function Carroussel({ slidepicture }) {
       setIncrement(newIndex);
     }
 
-    return "slideFromRight";
+    //return "slideFromRight";
   }
 
   return (
@@ -82,9 +82,6 @@ function Carroussel({ slidepicture }) {
           </div>) : ( null)
       }
 
-        
-
-      
 
       <p className="carroussel__compteur">
         {increment + 1} / {slidepicture.length}
