@@ -1,8 +1,13 @@
 // composant "carroussel"
 
 //Import des differents modules
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
+import  imagesLoaded  from "imagesloaded";
+
+
+//Import des composants enfants
+import {Loader} from "../loader/loader.jsx";
 
 //Import des images
 import flecheDroite from "../../asset/kasa-chevron-droite-slider.svg";
@@ -31,39 +36,61 @@ const DivSlider = styled.div`
 function Carroussel({ slidepicture }) {
 
   const [increment, setIncrement] = useState(0);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(()=>{
+    
+    imagesLoaded("#carroussel", { background: "#carroussel" }, function () {
+      setLoading(false)
+    });
+  },[increment])
 
   let displayChevron = (slidepicture.length <= 1)? false : true;
 
   function clickLeft() {
     if (increment > 0) {
+      setLoading(true);
       let newIndex = increment - 1;
       setIncrement(newIndex);
+      
     }
 
     if (increment < 1) {
+      setLoading(true);
       let newIndex = slidepicture.length - 1;
       setIncrement(newIndex);
+      //setLoading(false);
     }
+
+    
 
     //return "slideFromLeft";
   }
 
   function clickRight() {
     if (increment < slidepicture.length - 1) {
+      setLoading(true);
       let newIndex = increment + 1;
       setIncrement(newIndex);
+      //setLoading(false);
     }
 
     if (increment >= slidepicture.length - 1) {
+      setLoading(true);
       let newIndex = 0;
       setIncrement(newIndex);
+      //setLoading(false);
     }
+
+    
 
     //return "slideFromRight";
   }
 
+  
+
   return (
-    <DivSlider img={slidepicture[increment]} className="carroussel">
+    <DivSlider  id ="carroussel" className="carroussel" img={slidepicture[increment]}>
       
 
       {
@@ -74,6 +101,9 @@ function Carroussel({ slidepicture }) {
             <div className="chevron" value="left" onClick={() => clickLeft()}>
               <img src={flecheGauche} alt="fleche defilement à gauche"></img>
             </div>
+
+            {loading? (<Loader />) : (null)}
+
 
             <div className="chevron" value="right" onClick={() => clickRight()}>
               <img src={flecheDroite} alt="fleche defilement à droite"></img>
