@@ -3,6 +3,30 @@
 //Import des mixin qui gerent le responsive
 @import "../../utils/mixins/responsive/responsive.scss";
 
+
+@keyframes slideFromLeft {
+  0% {
+    background-position: -100vw 0vh;
+    
+  }
+  
+  100% {
+    background-position: 0vw 0vh;
+  }
+}
+
+@keyframes slideFromRight {
+  0% {
+    background-position:  100vw 0vh;
+    
+  }
+  
+  100% {
+    background-position:  0vw 0vh;
+   
+  }
+}
+
 .carroussel {
   position: relative;
   display: flex;
@@ -11,7 +35,16 @@
   align-items: center;
   border-radius: 10px;
 
-  background-color: red;
+  width: 80vw;
+  height: 0vh;
+  padding-top: 25vh;
+  padding-bottom: 25vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+ 
+
+  
 
   &__container-chevron {
     display: flex;
@@ -74,44 +107,16 @@
   }
 }
 
-@keyframes slideFromLeft {
-  0% {
-    transform: translateX(-100%);
-    //opacity: 0;
-  }
-  25% {
-    transform: translateX(-75%);
-    //opacity: 1;
-  }
-  50% {
-    transform: translateX(-50%);
-    //opacity: 1;
-  }
-  75% {
-    transform: translateX(-25%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
+  .slideFromLeft {
+      animation: slideFromLeft 300ms linear  ;
+      border: 2px solid red;
+      //background-position:  250% 0%;
+    }
 
-@keyframes slideFromRight {
-  0% {
-    transform: translateX(100%);
-    //opacity: 0;
+  .slideFromRight {
+      animation: slideFromRight 300ms linear  ;
+      border: 2px solid blue;
+      //background-position: 250% 0%;
   }
-  25% {
-    transform: translateX(75%);
-    //opacity: 1;
-  }
-  50% {
-    transform: translateX(50%);
-    //opacity: 1;
-  }
-  75% {
-    transform: translateX(25%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
+
+

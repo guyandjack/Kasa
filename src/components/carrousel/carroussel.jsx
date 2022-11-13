@@ -3,11 +3,13 @@
 //Import des differents modules
 import { useState, useEffect } from "react";
 import styled from "styled-components";
-import  imagesLoaded  from "imagesloaded";
 
 
 //Import des composants enfants
 import {Loader} from "../loader/loader.jsx";
+
+//Import de fonctions
+import {preLoad} from "../../utils/fonction/preload.js";
 
 //Import des images
 import flecheDroite from "../../asset/kasa-chevron-droite-slider.svg";
@@ -17,104 +19,107 @@ import flecheGauche from "../../asset/kasa-chevron-gauche-slider.svg";
 import "../../style/CSS/carroussel.css";
 
 const DivSlider = styled.div`
-  width: 80%;
-  height: fit-content;
-  padding-top: 15%;
-  padding-bottom: 15%;
-
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  overflow: hidden;
+  
   background-image: url(${({ img }) => img});
 
-  /*animation-name: ${({ way }) => way};
-  animation-duration: 0.5s;
-  animation-timing-function: linear;*/
 `;
 
 function Carroussel({ slidepicture }) {
 
   const [increment, setIncrement] = useState(0);
   const [loading, setLoading] = useState(false);
+  const [className, setClassName] = useState("carroussel");
 
-  useEffect(()=>{
+  //Prechargement des images, necessaires au carroussel.
+    let preLoadedPicture = preLoad(slidepicture);
     
-    imagesLoaded("#carroussel", { background: "#carroussel" }, function () {
-      setLoading(false)
-    });
-  },[increment])
 
-  let displayChevron = (slidepicture.length <= 1)? false : true;
+  //Affiche les fleches de défilements si il y a plusieurs images
+  let displayChevron = preLoadedPicture.length <= 1 ? false : true;
 
+  //Recupere l' image pour le carroussel suite à un click "gauche"
   function clickLeft() {
-    if (increment > 0) {
-      setLoading(true);
-      let newIndex = increment - 1;
-      setIncrement(newIndex);
+
+    async function changeClassName(){
       
+      setClassName("carroussel slideFromLeft");
     }
+   
+    changeClassName()
 
-    if (increment < 1) {
-      setLoading(true);
-      let newIndex = slidepicture.length - 1;
-      setIncrement(newIndex);
-      //setLoading(false);
-    }
+      .then(()=>{
 
-    
-
-    //return "slideFromLeft";
-  }
-
-  function clickRight() {
-    if (increment < slidepicture.length - 1) {
-      setLoading(true);
-      let newIndex = increment + 1;
-      setIncrement(newIndex);
-      //setLoading(false);
-    }
-
-    if (increment >= slidepicture.length - 1) {
-      setLoading(true);
-      let newIndex = 0;
-      setIncrement(newIndex);
-      //setLoading(false);
-    }
-
-    
-
-    //return "slideFromRight";
-  }
-
+        if (increment > 0) {
+          let newIndex = increment - 1;
+          setIncrement(newIndex);
+        }
   
+        if (increment < 1) {
+          let newIndex = preLoadedPicture.length - 1;
+          setIncrement(newIndex);
+        }
+
+      })
+
+      /*.then(()=>{
+        setClassName("carroussel");
+      })*/
+
+      .catch((e)=>{console.log(e)})
+    
+    
+
+    
+  }
+
+  //Recupere l' image pour le carroussel suite à un click "droit"
+  function clickRight() {
+
+    async function changeClassName(){
+
+      setClassName("carroussel slideFromRight");
+    }
+
+    changeClassName()
+      .then(()=>{ 
+
+        if (increment < preLoadedPicture.length - 1) {
+        let newIndex = increment + 1;
+        setIncrement(newIndex);
+      }
+    
+      if (increment >= preLoadedPicture.length - 1) {
+        let newIndex = 0;
+        setIncrement(newIndex);
+      }})
+
+      .catch((e)=>{console.log(e)})
+     
+   
+  }
 
   return (
-    <DivSlider  id ="carroussel" className="carroussel" img={slidepicture[increment]}>
+    <DivSlider
       
+      className={className}
+      img={preLoadedPicture[increment]}
+    >
+      {displayChevron ? (
+        <div className="carroussel__container-chevron">
+          <div className="chevron" value="left" onClick={() => clickLeft()}>
+            <img src={flecheGauche} alt="fleche defilement à gauche"></img>
+          </div>
 
-      {
-        displayChevron? (
+          {loading ? <Loader /> : null}
 
-          <div className="carroussel__container-chevron">
-
-            <div className="chevron" value="left" onClick={() => clickLeft()}>
-              <img src={flecheGauche} alt="fleche defilement à gauche"></img>
-            </div>
-
-            {loading? (<Loader />) : (null)}
-
-
-            <div className="chevron" value="right" onClick={() => clickRight()}>
-              <img src={flecheDroite} alt="fleche defilement à droite"></img>
-            </div>
-          
-          </div>) : ( null)
-      }
-
+          <div className="chevron" value="right" onClick={() => clickRight()}>
+            <img src={flecheDroite} alt="fleche defilement à droite"></img>
+          </div>
+        </div>
+      ) : null}
 
       <p className="carroussel__compteur">
-        {increment + 1} / {slidepicture.length}
+        {increment + 1} / {preLoadedPicture.length}
       </p>
     </DivSlider>
   );
