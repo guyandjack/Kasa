@@ -42,6 +42,7 @@ function Carroussel({ slidepicture }) {
 
     async function changeClassName(){
       
+      
       setClassName("carroussel slideFromLeft");
     }
    
@@ -61,14 +62,17 @@ function Carroussel({ slidepicture }) {
 
       })
 
-      /*.then(()=>{
-        setClassName("carroussel");
-      })*/
+      .then(()=>{
 
-      .catch((e)=>{console.log(e)})
-    
-    
+        setTimeout(function() {
 
+            setClassName("carroussel");
+
+        }, 300);
+      })
+      
+
+      .catch((e)=>{console.log(e)});
     
   }
 
@@ -76,26 +80,33 @@ function Carroussel({ slidepicture }) {
   function clickRight() {
 
     async function changeClassName(){
-
+      
       setClassName("carroussel slideFromRight");
     }
 
     changeClassName()
-      .then(()=>{ 
-
+      .then(() => {
         if (increment < preLoadedPicture.length - 1) {
-        let newIndex = increment + 1;
-        setIncrement(newIndex);
-      }
-    
-      if (increment >= preLoadedPicture.length - 1) {
-        let newIndex = 0;
-        setIncrement(newIndex);
-      }})
+          let newIndex = increment + 1;
+          setIncrement(newIndex);
+        }
 
-      .catch((e)=>{console.log(e)})
-     
-   
+        if (increment >= preLoadedPicture.length - 1) {
+          let newIndex = 0;
+          setIncrement(newIndex);
+        }
+      })
+
+      .then(() => {
+        setTimeout(function () {
+          setClassName("carroussel");
+        }, 300);
+      })
+
+      .catch((e) => {
+        console.log(e);
+      });
+
   }
 
   return (
@@ -105,6 +116,7 @@ function Carroussel({ slidepicture }) {
       img={preLoadedPicture[increment]}
     >
       {displayChevron ? (
+
         <div className="carroussel__container-chevron">
           <div className="chevron" value="left" onClick={() => clickLeft()}>
             <img src={flecheGauche} alt="fleche defilement à gauche"></img>
@@ -116,11 +128,13 @@ function Carroussel({ slidepicture }) {
             <img src={flecheDroite} alt="fleche defilement à droite"></img>
           </div>
         </div>
+
       ) : null}
 
       <p className="carroussel__compteur">
         {increment + 1} / {preLoadedPicture.length}
       </p>
+
     </DivSlider>
   );
 }
