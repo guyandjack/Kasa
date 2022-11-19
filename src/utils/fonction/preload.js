@@ -3,19 +3,17 @@
  
 
  function preLoad(arrayOfPictures) {
-
-    
+     
+             
     const preLoadedPictures = [];
-    
     arrayOfPictures.forEach((imageSrc) => {
     let objectImage = new Image();
     objectImage.src = imageSrc;
     preLoadedPictures.push(imageSrc);
-
     });
-    
 
-    
+       
+      
     return (preLoadedPictures)
 }
 

@@ -129,11 +129,9 @@
 .slideFromLeft {
   -webkit-animation: slideFromLeft 300ms linear;
           animation: slideFromLeft 300ms linear;
-  border: 2px solid red;
 }
 
 .slideFromRight {
   -webkit-animation: slideFromRight 300ms linear;
           animation: slideFromRight 300ms linear;
-  border: 2px solid blue;
 }

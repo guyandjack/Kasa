@@ -27,12 +27,27 @@ const DivSlider = styled.div`
 function Carroussel({ slidepicture }) {
 
   const [increment, setIncrement] = useState(0);
-  const [loading, setLoading] = useState(false);
+  
   const [className, setClassName] = useState("carroussel");
+  
+  const [isLoading, setIsLoading] = useState(true);
 
+  let preLoadedPicture = [];
+
+  useEffect(() => {
+    function effect(){
+
+      setIsLoading(false);
+      console.log("la valeur de 'isLoading'  suite au 'useEffect' est de : " + isLoading);
+    }
+
+    setTimeout(effect, 3000)
+  }, [preLoadedPicture]);
+  
   //Prechargement des images, necessaires au carroussel.
-    let preLoadedPicture = preLoad(slidepicture);
-    
+  
+  preLoadedPicture = preLoad(slidepicture);
+  console.log("la valeur de 'isLoading' est de : " + isLoading)
 
   //Affiche les fleches de défilements si il y a plusieurs images
   let displayChevron = preLoadedPicture.length <= 1 ? false : true;
@@ -41,7 +56,6 @@ function Carroussel({ slidepicture }) {
   function clickLeft() {
 
     async function changeClassName(){
-      
       
       setClassName("carroussel slideFromLeft");
     }
@@ -85,6 +99,7 @@ function Carroussel({ slidepicture }) {
     }
 
     changeClassName()
+
       .then(() => {
         if (increment < preLoadedPicture.length - 1) {
           let newIndex = increment + 1;
@@ -97,6 +112,7 @@ function Carroussel({ slidepicture }) {
         }
       })
 
+      // todo: refacto pour animation 
       .then(() => {
         setTimeout(function () {
           setClassName("carroussel");
@@ -110,31 +126,22 @@ function Carroussel({ slidepicture }) {
   }
 
   return (
-    <DivSlider
-      
-      className={className}
-      img={preLoadedPicture[increment]}
-    >
+    <DivSlider className={className} img={preLoadedPicture[increment]}>
       {displayChevron ? (
-
         <div className="carroussel__container-chevron">
           <div className="chevron" value="left" onClick={() => clickLeft()}>
             <img src={flecheGauche} alt="fleche defilement à gauche"></img>
           </div>
 
-          {loading ? <Loader /> : null}
-
           <div className="chevron" value="right" onClick={() => clickRight()}>
             <img src={flecheDroite} alt="fleche defilement à droite"></img>
           </div>
         </div>
-
       ) : null}
-
+      <Loader loading={isLoading}  />
       <p className="carroussel__compteur">
         {increment + 1} / {preLoadedPicture.length}
       </p>
-
     </DivSlider>
   );
 }

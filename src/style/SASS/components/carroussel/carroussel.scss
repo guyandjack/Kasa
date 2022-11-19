@@ -52,6 +52,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    //border: 2px solid red;
   }
 
   .chevron {
@@ -109,13 +110,13 @@
 
   .slideFromLeft {
       animation: slideFromLeft 300ms linear  ;
-      border: 2px solid red;
+      //border: 2px solid red;
       //background-position:  250% 0%;
     }
 
   .slideFromRight {
       animation: slideFromRight 300ms linear  ;
-      border: 2px solid blue;
+      //border: 2px solid blue;
       //background-position: 250% 0%;
   }
 
