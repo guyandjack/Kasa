@@ -30,7 +30,7 @@
     background-position: 0vw 0vh;
   }
 }
-.carroussel {
+.carrousel {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -46,15 +46,28 @@
       -ms-flex-align: center;
           align-items: center;
   border-radius: 10px;
-  width: 80vw;
-  height: 0vh;
-  padding-top: 25vh;
-  padding-bottom: 25vh;
+  width: 80%;
+  height: 0%;
+  padding-top: 25%;
+  padding-bottom: 25%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  /*&__loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  &__bulletpoint {
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    transform: translateX(-50%);
+  }*/
 }
-.carroussel__container-chevron {
+.carrousel__container-chevron {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -70,7 +83,7 @@
           align-items: center;
   width: 100%;
 }
-.carroussel .chevron {
+.carrousel .chevron {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -87,23 +100,23 @@
   margin: 0px 5% 0px 5%;
 }
 @media screen and (min-width: 993px) and (max-width: 1500px) {
-  .carroussel .chevron > img {
+  .carrousel .chevron > img {
     -webkit-transform: scale(1.5);
         -ms-transform: scale(1.5);
             transform: scale(1.5);
   }
 }
 @media screen and (min-width: 1501px) {
-  .carroussel .chevron > img {
+  .carrousel .chevron > img {
     -webkit-transform: scale(2);
         -ms-transform: scale(2);
             transform: scale(2);
   }
 }
-.carroussel__compteur {
+.carrousel__compteur {
   position: absolute;
   left: 50%;
-  bottom: 10%;
+  top: 85%;
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -112,14 +125,14 @@
   font-weight: 500;
 }
 @media screen and (min-width: 993px) and (max-width: 1500px) {
-  .carroussel__compteur {
+  .carrousel__compteur {
     -webkit-transform: scale(1.2);
         -ms-transform: scale(1.2);
             transform: scale(1.2);
   }
 }
 @media screen and (min-width: 1501px) {
-  .carroussel__compteur {
+  .carrousel__compteur {
     -webkit-transform: scale(1.5);
         -ms-transform: scale(1.5);
             transform: scale(1.5);

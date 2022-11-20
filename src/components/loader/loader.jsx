@@ -27,7 +27,7 @@ function Loader({loading}){
     return isLoading ? (
       <div className="loader">
         <div className="loader__spinner"></div>
-        <span className="loader__text">Loading...</span>
+        <div className="loader__text">Loading...</div>
       </div>
     ) : null;
 }

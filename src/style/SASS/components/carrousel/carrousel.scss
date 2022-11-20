@@ -1,15 +1,13 @@
-//feuille de style du composant "Carroussel"
+//feuille de style du composant "Carrousel"
 
 //Import des mixin qui gerent le responsive
 @import "../../utils/mixins/responsive/responsive.scss";
 
-
 @keyframes slideFromLeft {
   0% {
     background-position: -100vw 0vh;
-    
   }
-  
+
   100% {
     background-position: 0vw 0vh;
   }
@@ -17,17 +15,15 @@
 
 @keyframes slideFromRight {
   0% {
-    background-position:  100vw 0vh;
-    
+    background-position: 100vw 0vh;
   }
-  
+
   100% {
-    background-position:  0vw 0vh;
-   
+    background-position: 0vw 0vh;
   }
 }
 
-.carroussel {
+.carrousel {
   position: relative;
   display: flex;
   flex-flow: column nowrap;
@@ -35,16 +31,13 @@
   align-items: center;
   border-radius: 10px;
 
-  width: 80vw;
-  height: 0vh;
-  padding-top: 25vh;
-  padding-bottom: 25vh;
+  width: 80%;
+  height: 0%;
+  padding-top: 25%;
+  padding-bottom: 25%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
- 
-
-  
 
   &__container-chevron {
     display: flex;
@@ -84,7 +77,7 @@
   &__compteur {
     position: absolute;
     left: 50%;
-    bottom: 10%;
+    top: 85%;
     transform: translateX(-50%);
     color: white;
     font-size: 18px;
@@ -106,18 +99,30 @@
       transform: scale(1.5);
     }
   }
-}
 
-  .slideFromLeft {
-      animation: slideFromLeft 300ms linear  ;
-      //border: 2px solid red;
-      //background-position:  250% 0%;
-    }
-
-  .slideFromRight {
-      animation: slideFromRight 300ms linear  ;
-      //border: 2px solid blue;
-      //background-position: 250% 0%;
+  /*&__loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
   }
 
+  &__bulletpoint {
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    transform: translateX(-50%);
+  }*/
+}
 
+.slideFromLeft {
+  animation: slideFromLeft 300ms linear;
+  //border: 2px solid red;
+  //background-position:  250% 0%;
+}
+
+.slideFromRight {
+  animation: slideFromRight 300ms linear;
+  //border: 2px solid blue;
+  //background-position: 250% 0%;
+}

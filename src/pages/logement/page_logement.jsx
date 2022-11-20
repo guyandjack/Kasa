@@ -10,7 +10,7 @@ import { Navigate } from "react-router-dom";
 import { logements } from "../../data/logements.js";
 
 //Import des composants
-import { Carroussel } from "../../components/carrousel/carroussel.jsx";
+import { Carrousel } from "../../components/carrousel/carrousel.jsx";
 import { InfosLogement } from "../../components/infoslogement/infoslogement.jsx";
 import { CollapseComponent } from "../../components/collapse/collapse.jsx";
 
@@ -24,7 +24,7 @@ function PageLogement() {
 
   return result ? (
     <div className="logement">
-      <Carroussel slidepicture={result.pictures} />
+      <Carrousel slidepicture={result.pictures} />
       <InfosLogement info={result} />
 
       <div className="logement__collapse-container">

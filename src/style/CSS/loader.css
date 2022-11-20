@@ -32,9 +32,15 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+      -ms-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
   width: 100px;
   height: 100px;
+  border: 2px solid blue;
 }
 .loader__spinner {
   border: 8px solid #FF6060;
@@ -42,8 +48,8 @@
   border-radius: 50%;
   width: 100px;
   height: 100px;
-  -webkit-animation: runSpinner 5s linear 0s infinite;
-          animation: runSpinner 5s linear 0s infinite;
+  -webkit-animation: runSpinner 4s linear 0s infinite;
+          animation: runSpinner 4s linear 0s infinite;
 }
 .loader__text {
   position: absolute;

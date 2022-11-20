@@ -10,6 +10,7 @@ import "../../style/CSS/rating.css";
 //Fonction "Rating"
 
 function Rating({ valuerating, totalrating }) {
+  
   // determine l' affichage du rating rating
   let nbrRedStars = parseInt(valuerating, 10);
   let nbrGreyStars = totalrating - nbrRedStars;

@@ -1,0 +1,32 @@
+//feuille de de style du composant "BulletPoint"
+
+//Imoport de la charte de couleur
+@import "../../utils/colors-rule/colors-rule.scss";
+
+
+.bulletpoint{
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top:90%;
+    left: 50%;
+    transform: translateX(-50%) ;
+
+    .bulletpoint__circle{
+        
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: 2px solid map-get($colors-rule, primary-color);
+        background-color: transparent;
+        
+    }
+
+    .circle-fill{
+        background-color: map-get($colors-rule, primary-color );
+    }
+}
