@@ -48,7 +48,6 @@
             flex-flow: row wrap;
     -ms-flex-pack: distribute;
         justify-content: space-around;
-    width: 80%;
   }
 }
 @media screen and (min-width: 1501px) {
@@ -59,6 +58,5 @@
             flex-flow: row wrap;
     -ms-flex-pack: distribute;
         justify-content: space-around;
-    width: 75%;
   }
 }

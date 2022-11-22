@@ -129,10 +129,10 @@
           align-items: flex-start;
 }
 .collapse .open {
-  -webkit-animation: displayContent 0.3s linear 0s normal 1 forwards running;
-          animation: displayContent 0.3s linear 0s normal 1 forwards running;
+  -webkit-animation: displayContent 0.3s linear 0s normal 1 forwards;
+          animation: displayContent 0.3s linear 0s normal 1 forwards;
 }
 .collapse .close {
-  -webkit-animation: hideContent 0.3s linear 0s normal 1 forwards running;
-          animation: hideContent 0.3s linear 0s normal 1 forwards running;
+  -webkit-animation: hideContent 0.3s linear 0s normal 1 forwards;
+          animation: hideContent 0.3s linear 0s normal 1 forwards;
 }

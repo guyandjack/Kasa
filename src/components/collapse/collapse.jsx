@@ -1,7 +1,7 @@
-// genere le composant collapse
+// Composant "Collapse"
 
 //import des hook
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 //Import du contenu des composants "collapse" pour la page "A propos"
 import { contentCollapse } from "../../data/textforcollapse/textforcollapse.js";
@@ -23,8 +23,6 @@ function CollapseComponent({ type, info_description, info_equipments }) {
   }
 
  
-  
-
   let title = null;
   let content = null;
   let isList = false;

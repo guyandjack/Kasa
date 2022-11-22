@@ -1,0 +1,134 @@
+//Feuille de style composent "Collapse"
+
+//Import charte de couleur
+@import "../../utils/colors-rule/colors-rule.scss";
+
+//Import des mixins qui gerent le responsive
+@import "../../utils/mixins/responsive/responsive.scss";
+
+
+//Definition des animations
+@keyframes displayContent {
+  
+    0%{
+      height: 0px;
+      opacity: 0;
+    }
+    100%{
+      height: fit-content;
+      opacity: 1;
+    }
+   
+}
+
+@keyframes hideContent {
+  
+    0%{
+      height: fit-content;
+      opacity: 1;
+    }
+    100%{
+      height: 0px;
+      opacity: 0;
+    }
+   
+}
+
+//definition du style
+
+.collapse-beta {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: fit-content;
+    margin: 10px 0px;
+    font-size: 16px;
+    //border: 2px solid red;
+    
+
+    //responsive large screen
+    @include large-screen{
+        width: 45%;
+        font-size: 18px;
+    }
+    //responsive xlarge screen
+    @include x-large-screen{
+        width: 45%;
+        font-size: 18px;
+    }
+    //responsive xx-large screen
+    @include xx-large-screen{
+        width: 45%;
+        font-size: 20px;
+    }
+
+    .collapse-beta-label{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+    }
+
+    .collapse-beta-title{
+
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+        text-transform: capitalize;
+        color: map-get($colors-rule, text-light);
+        background-color:  map-get($colors-rule, primary-color);
+
+        & > img{
+            transition: all 250ms 0s linear;
+        }
+    }
+
+    .collapse-beta-content{
+
+        width: 100%;
+        padding: 0px;
+        border-radius: 10px;
+        background-color: map-get($colors-rule, bg-light);
+        overflow: hidden;
+        transition:all 250ms 0s linear, opacity 2s 0s;
+    }
+
+    .collapse-beta-input{
+        display: none;
+    }
+
+    //input "checked"
+    .collapse-beta-input:checked  ~ label > .collapse-beta-content{
+        
+        padding: 10px;
+        height: fit-content;
+        opacity: 1;
+        
+    }
+
+    .collapse-beta-input:checked  ~ label > .collapse-beta-title > img{
+
+        transform: rotateZ(180deg);
+    }
+
+
+    //input "Not-checked"
+    .collapse-beta-input:not(checked) ~ label > .collapse-beta-content {
+        
+        height: 0px;
+             
+    }
+    
+     
+
+  
+}

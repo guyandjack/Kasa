@@ -1,4 +1,4 @@
-//feuille de style pour le composant page "Home"
+//Feuille de style pour le composant page "Home"
 
 //Import des mixin qui gerent le responsive design
 @import "../utils/mixins/responsive/responsive.scss";
@@ -29,14 +29,14 @@
     @include x-large-screen {
       flex-flow: row wrap;
       justify-content: space-around;
-      width: 80%;
+      
     }
 
     //responsive xx-large screen
     @include xx-large-screen {
       flex-flow: row wrap;
       justify-content: space-around;
-      width: 75%;
+      
     }
   }
 }

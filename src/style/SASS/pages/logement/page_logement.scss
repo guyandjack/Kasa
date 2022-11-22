@@ -4,13 +4,30 @@
 @import "../../utils/mixins/responsive/responsive.scss";
 
 .logement {
+
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
 
   width: 100%;
-  //padding: 20px;
+  margin: 0px auto;
+
+  transition: width 250ms linear;
+  //responsive medium-screen
+    //pas de modification
+    //responsive large-screen
+    @include large-screen {
+      width: 100%;
+    }
+    //responsive x-large-screen
+    @include x-large-screen {
+     width: 90%;
+    }
+    //responsive xx-large-screen
+    @include xx-large-screen {
+      width: 90%;
+    }
 
   &__collapse-container {
     display: flex;

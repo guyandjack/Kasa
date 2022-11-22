@@ -1,4 +1,4 @@
-//feuille de style component collapse
+//Feuille de style composent "Collapse"
 
 //Import charte de couleur
 @import "../../utils/colors-rule/colors-rule.scss";
@@ -6,6 +6,8 @@
 //Import des mixins qui gerent le responsive
 @import "../../utils/mixins/responsive/responsive.scss";
 
+
+//Definition des animations
 @keyframes displayContent {
   
     0%{
@@ -31,6 +33,8 @@
     }
    
 }
+
+//definition du style
 
 .collapse {
   display: flex;
@@ -100,11 +104,11 @@
 
   .open{
 
-      animation: displayContent 0.3s linear 0s normal 1 forwards running ;
+      animation: displayContent 0.3s linear 0s normal 1 forwards ;
     }
     
   .close{
-      animation: hideContent 0.3s linear 0s normal 1 forwards running  ;
+      animation: hideContent 0.3s linear 0s normal 1 forwards ;
 
   }
 }

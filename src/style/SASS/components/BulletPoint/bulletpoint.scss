@@ -1,7 +1,10 @@
-//feuille de de style du composant "BulletPoint"
+//Feuille de style du composant "BulletPoint"
 
-//Imoport de la charte de couleur
+//Import de la charte de couleur
 @import "../../utils/colors-rule/colors-rule.scss";
+
+//Import des "mixin" qui gerent le responsive
+@import "../../utils/mixins/responsive/responsive.scss";
 
 
 .bulletpoint{
@@ -23,6 +26,22 @@
         border-radius: 50%;
         border: 2px solid map-get($colors-rule, primary-color);
         background-color: transparent;
+
+        //responsive large-screen 
+        //responsive medium-screen
+        //pas de changement
+
+        //responsive x-large-screen
+        @include x-large-screen {
+            width: 18px;
+            height: 18px;
+        }
+
+        //responsive xx-large-screen
+        @include xx-large-screen {
+            width: 20px;
+            height: 20px;
+        }
         
     }
 

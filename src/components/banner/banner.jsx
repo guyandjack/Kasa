@@ -12,7 +12,9 @@ import "../../style/CSS/banner.css";
 //Import du module "styled-components"
 import styled from "styled-components";
 
+
 const StyledBanner = styled.div`
+
   height: ${({ $bannerHeight }) => $bannerHeight};
 
   transition: height 250ms linear;
@@ -34,9 +36,11 @@ const StyledBanner = styled.div`
 `;
 
 function Banner({ pagename, text, height }) {
+
   const [sizeScreen, setSizeScreen] = useState(window.innerWidth);
 
   function getTypeScreen() {
+
     if (sizeScreen >= 0 && sizeScreen <= 768) {
       return "large";
     }
@@ -52,6 +56,7 @@ function Banner({ pagename, text, height }) {
     if (sizeScreen >= 1501) {
       return "xxlarge";
     }
+    
   }
 
   let typeScreen = getTypeScreen();

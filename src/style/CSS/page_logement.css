@@ -13,6 +13,25 @@
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+  margin: 0px auto;
+  -webkit-transition: width 250ms linear;
+  -o-transition: width 250ms linear;
+  transition: width 250ms linear;
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .logement {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1500px) {
+  .logement {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 1501px) {
+  .logement {
+    width: 90%;
+  }
 }
 .logement__collapse-container {
   display: -webkit-box;

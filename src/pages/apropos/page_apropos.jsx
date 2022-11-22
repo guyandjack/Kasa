@@ -1,10 +1,10 @@
-/******************************* Page "A propos"*************************************
+/******************************* Page "A propos" *************************************
  *******************************************************************************/
 
 //Import des composants enfants
 
 import { Banner } from "../../components/banner/banner.jsx";
-import { CollapseComponent } from "../../components/collapse/collapse.jsx";
+import { CollapseComponentBeta } from "../../components/collapse/collapse_beta.jsx";
 
 //Import feuille de style
 import "../../style/CSS/apropos.css";
@@ -15,10 +15,10 @@ function PageApropos() {
   return (
     <div className="apropos">
       <Banner pagename="apropos" text="" height="223px" />
-      <CollapseComponent type="fiabilite" />
-      <CollapseComponent type="respect" />
-      <CollapseComponent type="service" />
-      <CollapseComponent type="securite" />
+      <CollapseComponentBeta idselect="1" type="fiabilite" />
+      <CollapseComponentBeta idselect="2" type="respect" />
+      <CollapseComponentBeta idselect="3" type="service" />
+      <CollapseComponentBeta idselect="4" type="securite" />
     </div>
   );
 }

@@ -27,7 +27,7 @@ function App() {
 
         <Route path="/logement/:_id" element={<PageLogement />}></Route>
 
-        <Route exact path="/apropos" element={<PageApropos />}></Route>
+        <Route path="/apropos" element={<PageApropos />}></Route>
 
         <Route path="/*" element={<PageError />}></Route>
       </Routes>

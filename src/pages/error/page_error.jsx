@@ -1,4 +1,5 @@
-//genere la page "error 404"
+/******************************* Page "Error 404" *************************************
+ *******************************************************************************/
 
 //Import du module "LINK"
 import { Link } from "react-router-dom";
@@ -6,6 +7,8 @@ import { Link } from "react-router-dom";
 //Import des feuilles de style
 import "../../style/CSS/error.css";
 
+
+//Fonction "PageError"
 function PageError() {
   return (
     <div className="error">

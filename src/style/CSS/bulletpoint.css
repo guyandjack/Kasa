@@ -26,6 +26,18 @@
   border: 2px solid #FF6060;
   background-color: transparent;
 }
+@media screen and (min-width: 993px) and (max-width: 1500px) {
+  .bulletpoint .bulletpoint__circle {
+    width: 18px;
+    height: 18px;
+  }
+}
+@media screen and (min-width: 1501px) {
+  .bulletpoint .bulletpoint__circle {
+    width: 20px;
+    height: 20px;
+  }
+}
 .bulletpoint .circle-fill {
   background-color: #FF6060;
 }
