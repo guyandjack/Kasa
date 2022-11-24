@@ -12,7 +12,7 @@ import "../../style/CSS/loader.css";
 
 function Loader({loading}){
 
-    const[ isLoading, setIsLoading] = useState(true);
+    /*const[ isLoading, setIsLoading] = useState(true);
 
     useEffect(()=>{
         function hide(){ setIsLoading(false)
@@ -22,9 +22,9 @@ function Loader({loading}){
        
     },[loading]);
 
-    console.log("la props 'loading' du loader est à: " + loading)
+    console.log("la props 'loading' du loader est à: " + loading)*/
 
-    return isLoading ? (
+    return loading ? (
       <div className="loader">
         <div className="loader__spinner"></div>
         <div className="loader__text">Loading...</div>

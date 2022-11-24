@@ -27,6 +27,8 @@ function PageLogement() {
 
   let result = logements.find((logement) => logement.id === _id);
 
+  let heightSize = "150px"
+
   return result ? (
     <div className="logement">
       <Carrousel slidepicture={result.pictures} />
@@ -34,14 +36,20 @@ function PageLogement() {
 
       <div className="logement__collapse-container">
         <CollapseComponentBeta
-          idselect="1"
           className="collapse-logement"
-          info_description={result.description}
+          idSelect="description"
+          title="Description"
+          content={result.description}
+          isList={false}
+          height={heightSize}
         />
         <CollapseComponentBeta
-          idselect="2"
           className="collapse-logement"
-          info_equipments={result.equipments}
+          idSelect="equipements"
+          title="Equipements"
+          content={result.equipments}
+          isList={true}
+          height={heightSize}
         />
       </div>
     </div>

@@ -126,6 +126,19 @@
   transition: all 250ms 0s linear;
 }
 .collapse-beta .collapse-beta-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   width: 100%;
   padding: 0px;
   border-radius: 10px;
@@ -140,9 +153,7 @@
 }
 .collapse-beta .collapse-beta-input:checked ~ label > .collapse-beta-content {
   padding: 10px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 150px;
   opacity: 1;
 }
 .collapse-beta .collapse-beta-input:checked ~ label > .collapse-beta-title > img {

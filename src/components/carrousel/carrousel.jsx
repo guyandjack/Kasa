@@ -35,7 +35,7 @@ function Carrousel({ slidepicture }) {
     function effect() {
       setIsLoading(false);
       console.log(
-        "la valeur de 'isLoading'  suite au 'useEffect' est de : " + isLoading
+        "la valeur de 'isLoading' suite au 'useEffect' est de : " + isLoading
       );
     }
 

@@ -5,7 +5,7 @@ import "../../style/CSS/bulletpoint.css"
 
 function BulletPoint({count, countTotal}){
 
-    const circleBlank = <div className="bulletpoint__circle"></div>
+    const circleBlank = <div className="bulletpoint__circle"></div>;
     
     const circleFill = <div className="bulletpoint__circle circle-fill"></div>;
 
