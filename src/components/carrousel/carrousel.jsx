@@ -23,28 +23,36 @@ const DivSlider = styled.div`
 `;
 
 function Carrousel({ slidepicture }) {
+
   const [increment, setIncrement] = useState(0);
 
   const [className, setClassName] = useState("carrousel");
 
   const [isLoading, setIsLoading] = useState(true);
 
-  let preLoadedPicture = [];
-
+  const [preLoadedPicture, setPreLoadedPicture] = useState([]);
+  
   useEffect(() => {
-    function effect() {
-      setIsLoading(false);
-      console.log(
-        "la valeur de 'isLoading' suite au 'useEffect' est de : " + isLoading
-      );
+    if (preLoadedPicture.length > 0) {
+      setIsLoading(false)
     }
-
-    setTimeout(effect, 3000);
   }, [preLoadedPicture]);
 
   //Prechargement des images, necessaires au carrousel.
 
-  preLoadedPicture = preLoad(slidepicture);
+  //Temporisation qui simule un temps de chargement des images egal à 2 secondes
+  setTimeout(function () {
+    if (preLoadedPicture.length < 1) {
+
+      let imgPreload = preLoad(slidepicture);
+      setPreLoadedPicture(imgPreload);
+    
+    console.log(preLoadedPicture);}
+    
+  }, 2000 );
+
+  
+  
   console.log("la valeur de 'isLoading' est de : " + isLoading);
 
   //Affiche les fleches de défilements si il y a plusieurs images
@@ -100,6 +108,7 @@ function Carrousel({ slidepicture }) {
       })
 
       // todo: refacto pour animation
+      //temporisation permetent d' effectuer l' animation css de slide
       .then(() => {
         setTimeout(function () {
           setClassName("carrousel");
@@ -126,14 +135,12 @@ function Carrousel({ slidepicture }) {
         </div>
       ) : null}
       <Loader className="carrousel__loader" loading={isLoading} />
-
       
-
-      <BulletPoint
+      {(preLoadedPicture.length > 0)? (<BulletPoint
         className="carrousel__bulletpoint"
         count={increment}
         countTotal={preLoadedPicture.length - 1}
-      />
+      />) : (null)}
 
     </DivSlider>
   );
