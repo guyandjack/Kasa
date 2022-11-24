@@ -3,7 +3,7 @@
 //Import charte de couleur
 @import "../../utils/colors-rule/colors-rule.scss";
 
-//Import des mixins qui gerent le responsive
+//Import des "mixins" qui gerent le responsive
 @import "../../utils/mixins/responsive/responsive.scss";
 
 
@@ -103,7 +103,7 @@
         border-radius: 10px;
         background-color: map-get($colors-rule, bg-light);
         overflow: hidden;
-        transition:all 250ms 0s linear, opacity 2s 0s;
+        transition:height 250ms 250ms linear, opacity 250ms 0ms linear;
     }
 
     .collapse-beta-input{
@@ -116,6 +116,8 @@
         padding: 10px;
         height: 150px;
         opacity: 1;
+        transition-duration: 250ms, 500ms;
+        transition-delay: 0s, 250ms;
         
     }
 
@@ -128,7 +130,8 @@
     //input "Not-checked"
     .collapse-beta-input:not(checked) ~ label > .collapse-beta-content {
         
-       height: 0px;
+        opacity: 0;
+        height: 0px;
              
     }
     
