@@ -1,27 +1,35 @@
-//Composant "Bulletpoint"
+//Composant "BulletPoint"
 
 //Import des feuilles de style
 import "../../style/CSS/bulletpoint.css"
 
-function BulletPoint({count, countTotal}){
 
-    const circleBlank = <div className="bulletpoint__circle"></div>;
+//Fonction "BulletPoint"
+function BulletPoint({ count, countTotal, index, setindex }) {
+  
+ 
+  let arrayOfBulletPoint = [];
+
     
-    const circleFill = <div className="bulletpoint__circle circle-fill"></div>;
+  const circleFill = <div id={count} className="bulletpoint__circle circle-fill"></div>;
 
-    let arrayOfBulletPoint = [];
 
-    for(let i=0; i<=countTotal; i++){
-        arrayOfBulletPoint.push(circleBlank)
-    }
+  for (let i = 0; i <= countTotal; i++){
+    
+    const circleBlank = <div key={i} id={i}  className="bulletpoint__circle" onClick={()=>setindex(i)}></div>;
 
-    arrayOfBulletPoint.splice(count, 1, circleFill)
+        
+  arrayOfBulletPoint.push(circleBlank)
+    
+  }
 
-    return (
-      <div className="bulletpoint">
-        {arrayOfBulletPoint}
-      </div>
-    );
+  arrayOfBulletPoint.splice(count, 1, circleFill)
+
+  return (
+    <div className="bulletpoint">
+      {arrayOfBulletPoint}
+    </div>
+  );
 }
 
 export {BulletPoint}

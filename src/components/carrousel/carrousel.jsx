@@ -1,8 +1,10 @@
 // composant "Carrousel"
 
 //Import des differents modules
-import { useState, useEffect } from "react";
+import { useState, useEffect, React} from "react";
 import styled from "styled-components";
+
+
 
 //Import des composants enfants
 import { Loader } from "../loader/loader.jsx";
@@ -22,7 +24,11 @@ const DivSlider = styled.div`
   background-image: url(${({ img }) => img});
 `;
 
+
+//Fonction "Carrousel"
 function Carrousel({ slidepicture }) {
+
+  
 
   const [increment, setIncrement] = useState(0);
 
@@ -40,8 +46,9 @@ function Carrousel({ slidepicture }) {
 
   //Prechargement des images, necessaires au carrousel.
 
-  //Temporisation qui simule un temps de chargement des images egal à 2 secondes
+  //Temporisation qui simule un temps de chargement des images égal à 2 secondes
   setTimeout(function () {
+
     if (preLoadedPicture.length < 1) {
 
       let imgPreload = preLoad(slidepicture);
@@ -52,9 +59,6 @@ function Carrousel({ slidepicture }) {
   }, 2000 );
 
   
-  
-  console.log("la valeur de 'isLoading' est de : " + isLoading);
-
   //Affiche les fleches de défilements si il y a plusieurs images
   let displayChevron = preLoadedPicture.length <= 1 ? false : true;
 
@@ -88,7 +92,7 @@ function Carrousel({ slidepicture }) {
       });
   }
 
-  //Recupere l' image pour le carrousel suite à un click "droit"
+  //Recupere l'image pour le carrousel suite à un click "droit"
   function clickRight() {
     async function changeClassName() {
       setClassName("carrousel slideFromRight");
@@ -122,7 +126,6 @@ function Carrousel({ slidepicture }) {
 
   return (
     <DivSlider className={className} img={preLoadedPicture[increment]}>
-
       {displayChevron ? (
         <div className="carrousel__container-chevron">
           <div className="chevron" value="left" onClick={() => clickLeft()}>
@@ -135,13 +138,16 @@ function Carrousel({ slidepicture }) {
         </div>
       ) : null}
       <Loader className="carrousel__loader" loading={isLoading} />
-      
-      {(preLoadedPicture.length > 0)? (<BulletPoint
-        className="carrousel__bulletpoint"
-        count={increment}
-        countTotal={preLoadedPicture.length - 1}
-      />) : (null)}
 
+      {preLoadedPicture.length > 0 ? (
+        <BulletPoint
+          className="carrousel__bulletpoint"
+          count={increment}
+          countTotal={preLoadedPicture.length - 1}
+          index={increment}
+          setindex={setIncrement}
+        />
+      ) : null}
     </DivSlider>
   );
 }

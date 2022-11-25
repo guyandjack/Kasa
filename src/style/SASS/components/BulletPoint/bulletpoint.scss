@@ -3,7 +3,7 @@
 //Import de la charte de couleur
 @import "../../utils/colors-rule/colors-rule.scss";
 
-//Import des "mixin" qui gerent le responsive
+//Import des "mixins" qui gerent le responsive
 @import "../../utils/mixins/responsive/responsive.scss";
 
 
@@ -17,7 +17,7 @@
     position: absolute;
     top:90%;
     left: 50%;
-    transform: translateX(-50%) ;
+    transform: translateX(-50%);
 
     .bulletpoint__circle{
         
@@ -46,6 +46,6 @@
     }
 
     .circle-fill{
-        background-color: map-get($colors-rule, primary-color );
+        background-color: map-get($colors-rule, primary-color);
     }
 }

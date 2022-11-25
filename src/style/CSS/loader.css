@@ -40,7 +40,6 @@
           transform: translateX(-50%) translateY(-50%);
   width: 100px;
   height: 100px;
-  border: 2px solid blue;
 }
 .loader__spinner {
   border: 8px solid #FF6060;
