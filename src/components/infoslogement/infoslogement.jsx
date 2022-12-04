@@ -2,6 +2,7 @@
 
 //Import des composants enfants
 import { Rating } from "../rating/rating.jsx";
+import { Tag } from "../tag/tag.jsx";
 
 //Import feuille de style
 import "../../style/CSS/infoslogement.css";
@@ -22,11 +23,13 @@ function InfosLogement({ info }) {
         <p className="info-location">{info.location}</p>
 
         <div className="info-tag-container">
-          {info.tags.map((tag, index) => {
+          {info.tags.map((tag) => {
+           
             return (
-              <span key={index} className="info-tag">
-                {tag}
-              </span>
+              <Tag
+                key={tag}
+                className="info-tag"
+                tagname={tag} />
             );
           })}
         </div>

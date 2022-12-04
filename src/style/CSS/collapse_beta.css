@@ -144,9 +144,9 @@
   border-radius: 10px;
   background-color: #F7F7F7;
   overflow: hidden;
-  -webkit-transition: height 250ms 250ms linear, opacity 250ms 0ms linear;
-  -o-transition: height 250ms 250ms linear, opacity 250ms 0ms linear;
-  transition: height 250ms 250ms linear, opacity 250ms 0ms linear;
+  -webkit-transition: height 250ms 250ms linear, padding 0ms 250ms linear, opacity 250ms 50ms linear;
+  -o-transition: height 250ms 250ms linear, padding 0ms 250ms linear, opacity 250ms 50ms linear;
+  transition: height 250ms 250ms linear, padding 0ms 250ms linear, opacity 250ms 50ms linear;
 }
 .collapse-beta .collapse-beta-input {
   display: none;
@@ -155,12 +155,12 @@
   padding: 10px;
   height: 150px;
   opacity: 1;
-  -webkit-transition-duration: 250ms, 500ms;
-       -o-transition-duration: 250ms, 500ms;
-          transition-duration: 250ms, 500ms;
-  -webkit-transition-delay: 0s, 250ms;
-       -o-transition-delay: 0s, 250ms;
-          transition-delay: 0s, 250ms;
+  -webkit-transition-duration: 250ms, 0ms, 500ms;
+       -o-transition-duration: 250ms, 0ms, 500ms;
+          transition-duration: 250ms, 0ms, 500ms;
+  -webkit-transition-delay: 0s, 0ms, 250ms;
+       -o-transition-delay: 0s, 0ms, 250ms;
+          transition-delay: 0s, 0ms, 250ms;
 }
 .collapse-beta .collapse-beta-input:checked ~ label > .collapse-beta-title > img {
   -webkit-transform: rotateZ(180deg);

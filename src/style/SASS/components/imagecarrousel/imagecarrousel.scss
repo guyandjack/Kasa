@@ -1,0 +1,48 @@
+//Feuille de style du composant "ImageCarrousel"
+
+//Import des "mixins" qui gerent le responsive
+@import "../../utils/mixins/responsive/responsive.scss";
+
+//Import des "break points"
+@import "../../utils/breakpoint/break-point.scss";
+
+.image-carrousel{
+
+    display:block;
+    max-width: 1240px;
+    max-height: 415px;
+    width: 335px;
+    height: 255px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: all 250ms linear;
+    
+    //responsive design medium screen
+       @include medium-screen {
+        width: map-get($break-points, medium-min ) * 0.6;
+        height: 415px;
+        border-radius: 15px;
+      }
+
+      //responsive design screen large
+       @include large-screen {
+        width: map-get($break-points, large-min ) * 0.6;
+        height: 415px;
+        border-radius: 15px;
+      }
+
+      //responsive design screen x-large
+      @include x-large-screen {
+        width: map-get($break-points, x-large-min ) * 0.6;
+        height: 415px;
+        border-radius: 25px;
+      }
+
+      //responsive design screen xx-large
+      @include xx-large-screen {
+        width: 1240px;
+        height: 415px;
+        border-radius: 25px;
+      }
+    
+}

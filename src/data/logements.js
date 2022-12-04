@@ -163,7 +163,7 @@ const logements =[
       picture:
         "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-3.jpg",
     },
-    rating: "5",
+    rating: "1",
     location: "Ile de France - Paris 18e",
     equipments: ["Chambre Séparée", "Parking"],
     tags: ["Montmartre", "Culture", "Charme"],

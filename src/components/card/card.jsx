@@ -33,7 +33,7 @@ function Card({ cover, title, rating, name, id }) {
     <Link className="card" to={urlLogement}>
       <DivContainerImg url={cover}></DivContainerImg>
       <p className="card__name">
-        {name} <span>vous propose:</span>{" "}
+        {name} <span>vous propose:</span>
       </p>
       <p className="card__title">{title}</p>
 

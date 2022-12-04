@@ -5,21 +5,21 @@ import "../../style/CSS/bulletpoint.css"
 
 
 //Fonction "BulletPoint"
-function BulletPoint({ count, countTotal, index, setindex }) {
+function BulletPoint({ count, countTotal, setindex }) {
   
  
   let arrayOfBulletPoint = [];
 
     
-  const circleFill = <div id={count} className="bulletpoint__circle circle-fill"></div>;
+  const circleFill = <div key={count} id={count} className="bulletpoint__circle circle-fill"></div>;
 
 
   for (let i = 0; i <= countTotal; i++){
     
     const circleBlank = <div key={i} id={i}  className="bulletpoint__circle" onClick={()=>setindex(i)}></div>;
 
-        
-  arrayOfBulletPoint.push(circleBlank)
+          
+    arrayOfBulletPoint.push(circleBlank)
     
   }
 

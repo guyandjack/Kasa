@@ -133,37 +133,41 @@
     align-items: center;
     width: 100%;
     margin-top: 5px;
-  }
 
-  .info-tag {
-    margin: 5px 15px 0px 0px;
-    font-size: 10px;
-    color: map-get($colors-rule, text-light);
-    padding: 5px 10px 5px 10px;
-    background-color: map-get($colors-rule, primary-color);
-    border-radius: 5px;
+    & .info-tag {
+      margin: 5px 15px 0px 0px;
+      font-size: 10px;
+      color: map-get($colors-rule, text-light);
+      padding: 5px 10px 5px 10px;
+      background-color: map-get($colors-rule, primary-color);
+      border-radius: 5px;
 
-    //responsive design medium screen
-    //pas de modification
+      //responsive design medium screen
+      //pas de modification
 
-    //responsive design screen large
-    //pas de modification
-    @include x-large-screen {
+      //responsive design screen large
+      //pas de modification
+      @include x-large-screen {
       font-size:  12px; 
       
-    }
+      }
 
-    //responsive design screen x-large
-    @include x-large-screen {
+      //responsive design screen x-large
+      @include x-large-screen {
       font-size: 14px ;
       
-    }
-    //responsive design screen xx-large
-    @include xx-large-screen {
+      }
+      //responsive design screen xx-large
+      @include xx-large-screen {
       font-size: 16px ;
       
+      }
     }
+      
   }
+
+  
+  
 
   .infoslogement__container--2 {
     display: flex;

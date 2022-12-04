@@ -1,0 +1,41 @@
+.image-carrousel {
+  display: block;
+  max-width: 1240px;
+  max-height: 415px;
+  width: 335px;
+  height: 255px;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: all 250ms linear;
+  -o-transition: all 250ms linear;
+  transition: all 250ms linear;
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .image-carrousel {
+    width: 460.8px;
+    height: 415px;
+    border-radius: 15px;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .image-carrousel {
+    width: 595.2px;
+    height: 415px;
+    border-radius: 15px;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1500px) {
+  .image-carrousel {
+    width: 900px;
+    height: 415px;
+    border-radius: 25px;
+  }
+}
+@media screen and (min-width: 1501px) {
+  .image-carrousel {
+    width: 1240px;
+    height: 415px;
+    border-radius: 25px;
+  }
+}

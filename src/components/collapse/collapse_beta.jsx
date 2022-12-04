@@ -29,8 +29,8 @@ function CollapseComponentBeta({ idSelect, title, content, isList }) {
         
           {isList ? (
             <ul className="collapse-beta-content">
-              {content.map((gear) => {
-                return <li key={gear}>{gear}</li>;
+              {content.map((item) => {
+                return <li key={item}>{item}</li>;
               })}
             </ul>
           ) : (

@@ -4,8 +4,6 @@
 import { useState, useEffect, React} from "react";
 import styled from "styled-components";
 
-
-
 //Import des composants enfants
 import { Loader } from "../loader/loader.jsx";
 import { BulletPoint } from "../bulletpoint/bulletpoint.jsx";
@@ -28,7 +26,6 @@ const DivSlider = styled.div`
 //Fonction "Carrousel"
 function Carrousel({ slidepicture }) {
 
-  
 
   const [increment, setIncrement] = useState(0);
 
@@ -39,26 +36,23 @@ function Carrousel({ slidepicture }) {
   const [preLoadedPicture, setPreLoadedPicture] = useState([]);
   
   useEffect(() => {
+
     if (preLoadedPicture.length > 0) {
       setIsLoading(false)
     }
+    
   }, [preLoadedPicture]);
 
   //Prechargement des images, necessaires au carrousel.
 
-  //Temporisation qui simule un temps de chargement des images égal à 2 secondes
-  setTimeout(function () {
-
-    if (preLoadedPicture.length < 1) {
-
-      let imgPreload = preLoad(slidepicture);
-      setPreLoadedPicture(imgPreload);
-    
-    console.log(preLoadedPicture);}
-    
-  }, 2000 );
-
+  //Precharge les images
   
+  if (preLoadedPicture.length < 1) { //evite le rechargement des images lors du re-render produit par le useEffect
+    let imgPreloaded = preLoad(slidepicture);
+    setPreLoadedPicture(imgPreloaded);
+  }
+
+     
   //Affiche les fleches de défilements si il y a plusieurs images
   let displayChevron = preLoadedPicture.length <= 1 ? false : true;
 
@@ -126,6 +120,7 @@ function Carrousel({ slidepicture }) {
 
   return (
     <DivSlider className={className} img={preLoadedPicture[increment]}>
+      
       {displayChevron ? (
         <div className="carrousel__container-chevron">
           <div className="chevron" value="left" onClick={() => clickLeft()}>
@@ -144,7 +139,6 @@ function Carrousel({ slidepicture }) {
           className="carrousel__bulletpoint"
           count={increment}
           countTotal={preLoadedPicture.length - 1}
-          index={increment}
           setindex={setIncrement}
         />
       ) : null}

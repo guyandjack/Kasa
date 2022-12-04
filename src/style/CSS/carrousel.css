@@ -1,33 +1,41 @@
 @-webkit-keyframes slideFromLeft {
   0% {
-    background-position: -100vw 0vh;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
   }
   100% {
-    background-position: 0vw 0vh;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
   }
 }
 @keyframes slideFromLeft {
   0% {
-    background-position: -100vw 0vh;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
   }
   100% {
-    background-position: 0vw 0vh;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
   }
 }
 @-webkit-keyframes slideFromRight {
   0% {
-    background-position: 100vw 0vh;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
   }
   100% {
-    background-position: 0vw 0vh;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
   }
 }
 @keyframes slideFromRight {
   0% {
-    background-position: 100vw 0vh;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
   }
   100% {
-    background-position: 0vw 0vh;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
   }
 }
 .carrousel {
@@ -45,16 +53,19 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-radius: 10px;
-  width: 80%;
-  height: 0%;
-  padding-top: 25%;
-  padding-bottom: 25%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  overflow: hidden;
+  max-width: 1240px;
+  max-height: 415px;
+  min-width: 335px;
+  min-height: 255px;
 }
 .carrousel__container-chevron {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+      -ms-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

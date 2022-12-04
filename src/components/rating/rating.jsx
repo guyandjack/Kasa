@@ -9,37 +9,30 @@ import "../../style/CSS/rating.css";
 
 //Fonction "Rating"
 
-function Rating({ valuerating, totalrating }) {
+function Rating({ valuerating, totalrating }){
   
-  // determine l' affichage du rating rating
+  // determine l'affichage du rating rating
   let nbrRedStars = parseInt(valuerating, 10);
   let nbrGreyStars = totalrating - nbrRedStars;
   let arrayOfRatingStars = [];
   
-
-  const etoileRouge = (
-    <img
-      className="info-rating__star"
-      //key={index}
-      src={redStars}
-      alt="etoile"
-    ></img>
-  );
-
-  const etoileGrise = (
-    <img
-      
-      className="info-rating__star"
-      src={greyStars}
-      alt="etoile"
-    ></img>
-  );
+ 
 
   for (let i = 1; i <= nbrRedStars; i++) {
+
+     const etoileRouge = (
+       <img key={"redstar" + i} className="info-rating__star" src={redStars} alt="etoile"></img>
+     );
     arrayOfRatingStars.push(etoileRouge);
+    
+    
   }
 
   for (let i = 1; i <= nbrGreyStars; i++) {
+
+    const etoileGrise = (
+      <img key={"greystar" + i} className="info-rating__star" src={greyStars} alt="etoile"></img>
+    );
     arrayOfRatingStars.push(etoileGrise);
   }
 

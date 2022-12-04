@@ -20,7 +20,8 @@ body {
   width: 100%;
   max-width: 1800px;
   margin: 0px auto;
-  border: 2px solid blue;
+  
+  
 
   //responsive medium screen
   @include medium-screen {

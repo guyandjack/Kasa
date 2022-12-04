@@ -152,7 +152,7 @@
   width: 100%;
   margin-top: 5px;
 }
-.infoslogement .info-tag {
+.infoslogement .info-tag-container .info-tag {
   margin: 5px 15px 0px 0px;
   font-size: 10px;
   color: #FFFFFF;
@@ -161,17 +161,17 @@
   border-radius: 5px;
 }
 @media screen and (min-width: 993px) and (max-width: 1500px) {
-  .infoslogement .info-tag {
+  .infoslogement .info-tag-container .info-tag {
     font-size: 12px;
   }
 }
 @media screen and (min-width: 993px) and (max-width: 1500px) {
-  .infoslogement .info-tag {
+  .infoslogement .info-tag-container .info-tag {
     font-size: 14px;
   }
 }
 @media screen and (min-width: 1501px) {
-  .infoslogement .info-tag {
+  .infoslogement .info-tag-container .info-tag {
     font-size: 16px;
   }
 }

@@ -103,7 +103,7 @@
         border-radius: 10px;
         background-color: map-get($colors-rule, bg-light);
         overflow: hidden;
-        transition:height 250ms 250ms linear, opacity 250ms 0ms linear;
+        transition:height 250ms 250ms linear, padding 0ms 250ms linear , opacity 250ms 50ms linear;
     }
 
     .collapse-beta-input{
@@ -116,8 +116,8 @@
         padding: 10px;
         height: 150px;
         opacity: 1;
-        transition-duration: 250ms, 500ms;
-        transition-delay: 0s, 250ms;
+        transition-duration: 250ms, 0ms, 500ms;
+        transition-delay: 0s, 0ms, 250ms;
         
     }
 

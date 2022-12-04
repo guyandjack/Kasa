@@ -13,7 +13,7 @@
       -ms-flex-align: center;
           align-items: center;
   position: absolute;
-  top: 90%;
+  top: 80%;
   left: 50%;
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
