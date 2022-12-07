@@ -113,7 +113,16 @@
   
 }
 
+.image-carrousel{
+  max-width: 1240px;
+  max-height: 415px;
+  min-width: 335px;
+  min-height: 255px;
 
+  border-radius: 25px;
+  object-fit: cover;
+  object-position: center;
+}
 
 .slideFromLeft {
   animation: slideFromLeft 300ms linear;

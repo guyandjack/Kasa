@@ -47,17 +47,20 @@ function CarrouselBeta({ slidepicture }) {
     let displayChevron = false;
     
     //Prechargement des images, necessaires au carrousel.
-    console.log(preLoadedPicture);
-
-    
+       
     if(preLoadedPicture.length === 0) {
       //evite le rechargement des images lors du re-render produit par le useEffect
-        setPreLoadedPicture(preLoad(slidepicture))
+      let pictures = preLoad(slidepicture);
+      pictures
+        .then((result) => {
+          console.log(result)
+          setPreLoadedPicture(result);
+        })
         
     }
    
     
-  //Affichage conditionnel des fleches de defilement 
+  //Affichage conditionnel des fleches de défilement 
    if (preLoadedPicture.length >= 1) {
         displayChevron = true;
     }  

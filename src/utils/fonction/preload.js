@@ -5,42 +5,61 @@
 import {ImageCarrousel} from "../../components/imagecarrousel/imagecarrousel.jsx"
  
 
-function preLoad(arrayOfPictures) {
+async  function preLoad(arrayOfPictures) {
 
     //Variables de fonctionnement
     let preLoadedPictures = [];
     let errorMsg = "erreur de chargement, image non disponible";
 
-    //Fonctions secondaire à sequencer
-    async function getSrc(srcImg) {
+    //Fonctions secondaire à séquencer
+   /* async function getSrc(srcImg) {
+
        let image = new Image(); 
-        image.src = srcImg; 
-        
-       return image
-    }
+        image.src = srcImg;
+        console.log(image.width)
+        return image
+    }*/
 
-     function checkImage(img) {
+    /*async function checkImage(img) {
+         
         let test;
-        if (img.width !== 0) {
-            console.log("taile de l' image avec reponse true : " + img.width);
-            test = true
+         
+        if (typeof img !== "string") {
+             
+            if (img.width !== 0) {
+                console.log("taile de l' image avec reponse true : " + img.width);
+                test = true
 
-        }
-        else {
-            console.log("taile de l' image avec reponse false : " + img.width);
-            test = false;
-        }
+            }
 
-        return test
-    }
+            else {
+                console.log("taile de l' image avec reponse false : " + img.width);
+                test = false;
+            }
+            return test
+        }
+        return false
+    }*/
 
-     function pushComponent(boolean, urlImg) {
-        if (boolean === true) {
-            preLoadedPictures.push(<ImageCarrousel key={urlImg} imgSrc={urlImg} imgAlt="contenu du carrousel" />)
-        }
-        else {
-            preLoadedPictures.push(<ImageCarrousel key={urlImg} imgSrc={urlImg} imgAlt={errorMsg} />)
-        }
+    function createComponent(urlImg) {
+         
+         return new Promise((resolve, reject) => {
+            
+             let imageSlider = (
+               <img
+                 class="image-carrousel"
+                 src={urlImg}
+                 alt="contenu du carroussel"
+               />
+             );
+             imageSlider.onload = resolve(imageSlider);
+             imageSlider.onerror = reject(errorMsg);
+             console.log(imageSlider)
+            console.log("essai chargement")
+            
+        })
+        
+       
     }
 
     
@@ -48,33 +67,22 @@ function preLoad(arrayOfPictures) {
     async function loadAllPicture() {
 
         arrayOfPictures.forEach((url) => {
-            
-            let picture = getSrc(url);
+          
+           
+           preLoadedPictures.push(createComponent(url)); 
+                       
+                     
+        });
+
+       return  Promise.all(preLoadedPictures)
             
 
-            picture
-                
-                .then((result) => {
-                    let test = checkImage(result)
-                    console.log(test)
-                    return test
-                })
-                .then((boolean) => {
-                    console.log(boolean)
-                    pushComponent(boolean, url);
-                })
-                .catch((e) => { console.log(errorMsg + e) });
-        
-            
-        });
     }
 
-    loadAllPicture();
-    console.log(preLoadedPictures)
-
-    return preLoadedPictures
-
-
+    return loadAllPicture();
+    
+    
+    
 
     
 
