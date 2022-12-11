@@ -176,8 +176,7 @@
     align-items: center;
     width: 100%;
 
-    //border: 2px solid pink;
-
+    
     //responsive design medium screen
     //pas de modification
 
@@ -212,6 +211,26 @@
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
+    margin: 5px 0px;
+
+    //responsive design medium screen
+      //pas de modification
+
+      //responsive design screen large
+      
+      @include large-screen {
+        transform: scale(1.2) translateX(-20%);
+      }
+
+      //responsive design screen x-large
+      @include x-large-screen {
+        transform: scale(1.4) translateX(-40%);
+      }
+
+      //responsive design screen xx-large
+      @include xx-large-screen {
+       transform: scale(2) translateX(-50%);
+      }
        
   }
 

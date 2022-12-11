@@ -1,4 +1,5 @@
 .card {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -17,9 +18,10 @@
   margin: 10px auto;
   border-radius: 10px;
   padding: 10px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#FF6060), to(#000000));
-  background: -o-linear-gradient(top, #FF6060 0%, #000000 100%);
-  background: linear-gradient(180deg, #FF6060 0%, #000000 100%);
+  overflow: hidden;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #FF6060), to(#000000));
+  background: -o-linear-gradient(top, #FF6060 50%, #000000 100%);
+  background: linear-gradient(180deg, #FF6060 50%, #000000 100%);
   font-size: 18px;
   color: #FFFFFF;
   -webkit-transition: all 250ms linear;
@@ -54,10 +56,43 @@
     margin: 25px;
   }
 }
+.card__img, .card__name, .card__title, .card__rating {
+  position: absolute;
+}
+.card__img {
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 60%;
+}
+.card__name {
+  top: 65%;
+  left: 10px;
+}
 .card__name > span {
   font-size: 16px;
 }
+.card__title {
+  top: 75%;
+  left: 10px;
+}
 .card__rating {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 90%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
 }

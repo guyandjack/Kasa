@@ -1,5 +1,7 @@
 //Composant "Rating"
 
+import React from "react";
+
 //Import des images
 import redStars from "../../asset/rating-red-star.svg";
 import greyStars from "../../asset/rating-grey-star.svg";
@@ -11,7 +13,7 @@ import "../../style/CSS/rating.css";
 
 function Rating({ valuerating, totalrating }){
   
-  // determine l'affichage du rating rating
+  // determine l'affichage du rating 
   let nbrRedStars = parseInt(valuerating, 10);
   let nbrGreyStars = totalrating - nbrRedStars;
   let arrayOfRatingStars = [];
@@ -37,11 +39,11 @@ function Rating({ valuerating, totalrating }){
   }
 
   return (
-    <div className="rating">
-      
-      {arrayOfRatingStars}
-      
-    </div>
+    
+      <React.Fragment>
+        {arrayOfRatingStars}
+      </React.Fragment>
+   
   );
 }
 

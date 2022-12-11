@@ -256,6 +256,28 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 5px 0px;
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .infoslogement .info-rating {
+    -webkit-transform: scale(1.2) translateX(-20%);
+        -ms-transform: scale(1.2) translateX(-20%);
+            transform: scale(1.2) translateX(-20%);
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1500px) {
+  .infoslogement .info-rating {
+    -webkit-transform: scale(1.4) translateX(-40%);
+        -ms-transform: scale(1.4) translateX(-40%);
+            transform: scale(1.4) translateX(-40%);
+  }
+}
+@media screen and (min-width: 1501px) {
+  .infoslogement .info-rating {
+    -webkit-transform: scale(2) translateX(-50%);
+        -ms-transform: scale(2) translateX(-50%);
+            transform: scale(2) translateX(-50%);
+  }
 }
 .infoslogement .info-host {
   display: -webkit-box;

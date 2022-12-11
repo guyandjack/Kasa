@@ -3,10 +3,12 @@
 //Import de la charte de couleur
 @import "../../utils/colors-rule/colors-rule.scss";
 
-//Import des mixins qui gerent le responsive design
+//Import des "mixins" qui gerent le responsive design
 @import "../../utils/mixins/responsive/_responsive.scss";
 
-#banner {
+
+.bannerbeta{
+
   position: relative;
   display: flex;
   flex-flow: column nowrap;
@@ -14,10 +16,11 @@
   align-items: flex-start;
 
   width: 100%;
+  height:111px;
   margin: 20px 0px;
   padding: 20px;
   border-radius: 25px;
-  background-color: map-get($colors-rule, bg-dark);
+  
 
   //responsive large-screen
   @include large-screen {
@@ -34,11 +37,32 @@
     height: 250px;
   }
 
-  &__text {
-    z-index: 10;
-    width: 45%;
+  &__backgroundcolor , &__img{
+    position:absolute;
+    top:0px;
+    left:0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+  }
+
+  &__backgroundcolor{
+    
+    background-color: map-get($colors-rule, bg-dark );
+  }
+
+  &__img{
+    
+    opacity: 0.7;
+  }
+
+  &__text{
+    position:absolute;
+    top:50%;
+    left:0%;
+    transform: translateY(-50%);
+    color: map-get($colors-rule, text-light );
     font-size: 24px;
-    color: map-get($colors-rule, text-light);
 
     //responsive large-screen
     @include medium-screen {
@@ -60,4 +84,5 @@
       font-size: 50px;
     }
   }
+
 }

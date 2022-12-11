@@ -3,7 +3,7 @@
 //Import charte de couleur
 @import "../../utils/colors-rule/colors-rule.scss";
 
-//Import des mixins qui gerent le responsive
+//Import des "mixins" qui gerent le responsive
 @import "../../utils/mixins/responsive/responsive.scss";
 
 
@@ -15,7 +15,7 @@
       opacity: 0;
     }
     100%{
-      height: 250px;
+      height: fit-content;
       opacity: 1;
     }
    
@@ -24,7 +24,7 @@
 @keyframes hideContent {
   
     0%{
-      height: 250px;
+      height: fit-content;
       opacity: 1;
     }
     100%{
@@ -37,78 +37,105 @@
 //definition du style
 
 .collapse {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  width: 80%;
-  height: fit-content;
-  margin: 10px 0px;
-  font-size: 16px;
-
-  //responsive large sreen
-  @include large-screen{
-    width: 45%;
-    font-size: 18px;
-  }
-  //responsive xlarge sreen
-  @include x-large-screen{
-    width: 45%;
-    font-size: 18px;
-  }
-  //responsive xx-large sreen
-  @include xx-large-screen{
-    width: 45%;
-    font-size: 20px;
-  }
-     
-
-  &__title,
-  &__content,
-  &__content--list {
     display: flex;
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-  }
-
-  &__content,
-  &__content--list {
-   
-    background-color: map-get($colors-rule, bg-light);
-    color: map-get($colors-rule, primary-color);
-    
-    
-  }
-
-  &__title {
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    text-transform: capitalize;
-    color: map-get($colors-rule, text-light);
-    background-color: map-get($colors-rule, primary-color);
-  }
-
-  &__content {
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-
-  &__content--list {
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: flex-start;
-  }
+    width: 100%;
+    height: fit-content;
+    margin: 10px 0px;
+    font-size: 16px;
+    //border: 2px solid red;
+    
 
-  .open{
+    //responsive large screen
+    @include large-screen{
+        width: 45%;
+        font-size: 18px;
+    }
+    //responsive xlarge screen
+    @include x-large-screen{
+        width: 45%;
+        font-size: 18px;
+    }
+    //responsive xx-large screen
+    @include xx-large-screen{
+        width: 45%;
+        font-size: 20px;
+    }
 
-      animation: displayContent 0.3s linear 0s normal 1 forwards ;
+    .collapse-label{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+    }
+
+    .collapse-title{
+
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+        text-transform: capitalize;
+        color: map-get($colors-rule, text-light);
+        background-color:  map-get($colors-rule, primary-color);
+
+        & > img{
+            transition: all 250ms 0s linear;
+        }
+    }
+
+    .collapse-content{
+        display:flex;
+        flex-flow: column wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        width: 100%;
+        padding: 0px;
+        border-radius: 10px;
+        background-color: map-get($colors-rule, bg-light);
+        overflow: hidden;
+        transition:height 250ms 250ms linear, padding 0ms 250ms linear , opacity 250ms 50ms linear;
+    }
+
+    .collapse-input{
+        display: none;
+    }
+
+    //input "checked"
+    .collapse-input:checked  ~ label > .collapse-content{
+        
+        padding: 10px;
+        height: 150px;
+        opacity: 1;
+        transition-duration: 250ms, 0ms, 500ms;
+        transition-delay: 0s, 0ms, 250ms;
+        
+    }
+
+    .collapse-input:checked  ~ label > .collapse-title > img{
+
+        transform: rotateZ(180deg);
+    }
+
+
+    //input "Not-checked"
+    .collapse-input:not(checked) ~ label > .collapse-content {
+        
+        opacity: 0;
+        height: 0px;
+             
     }
     
-  .close{
-      animation: hideContent 0.3s linear 0s normal 1 forwards ;
+     
 
-  }
+  
 }

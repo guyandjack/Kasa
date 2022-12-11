@@ -37,11 +37,10 @@ function InfosLogement({ info }) {
       </div>
 
       <div className="infoslogement__container--2">
-        <Rating
-          className="info-rating"
-          valuerating={valueRating}
-          totalrating={totalRating}
-        />
+        
+        <div className="info-rating">
+          <Rating valuerating={valueRating} totalrating={totalRating} />
+        </div>
 
         <div className="info-host">
           <div className="info-host__name">{info.host.name}</div>

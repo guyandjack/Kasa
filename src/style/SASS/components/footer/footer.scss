@@ -42,5 +42,29 @@
 
   &__text {
     color: map-get($colors-rule, text-light);
+
   }
+
+  #copyright{
+    
+    font-size: 1em;
+
+    //responsive medium-screen
+  @include medium-screen {
+    font-size: 1.2em;
+  }
+  //responsive large-screen
+  @include large-screen {
+    font-size: 1.4em;
+  }
+  //responsive x-large-screen
+  @include x-large-screen {
+    font-size: 1.6em;
+  }
+  //responsive xx-large-screen
+  @include xx-large-screen {
+    font-size: 5em;
+  }
+   }
+
 }

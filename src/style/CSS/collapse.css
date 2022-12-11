@@ -4,7 +4,8 @@
     opacity: 0;
   }
   100% {
-    height: 250px;
+    height: -webkit-fit-content;
+    height: fit-content;
     opacity: 1;
   }
 }
@@ -14,13 +15,16 @@
     opacity: 0;
   }
   100% {
-    height: 250px;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
     opacity: 1;
   }
 }
 @-webkit-keyframes hideContent {
   0% {
-    height: 250px;
+    height: -webkit-fit-content;
+    height: fit-content;
     opacity: 1;
   }
   100% {
@@ -30,7 +34,9 @@
 }
 @keyframes hideContent {
   0% {
-    height: 250px;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
     opacity: 1;
   }
   100% {
@@ -49,10 +55,10 @@
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 80%;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -77,19 +83,26 @@
     font-size: 20px;
   }
 }
-.collapse__title, .collapse__content, .collapse__content--list {
+.collapse .collapse-label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
-  padding: 10px;
-  border-radius: 10px;
 }
-.collapse__content, .collapse__content--list {
-  background-color: #F7F7F7;
-  color: #FF6060;
-}
-.collapse__title {
+.collapse .collapse-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
@@ -100,39 +113,61 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
   text-transform: capitalize;
   color: #FFFFFF;
   background-color: #FF6060;
 }
-.collapse__content {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+.collapse .collapse-title > img {
+  -webkit-transition: all 250ms 0s linear;
+  -o-transition: all 250ms 0s linear;
+  transition: all 250ms 0s linear;
 }
-.collapse__content--list {
+.collapse .collapse-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  width: 100%;
+  padding: 0px;
+  border-radius: 10px;
+  background-color: #F7F7F7;
+  overflow: hidden;
+  -webkit-transition: height 250ms 250ms linear, padding 0ms 250ms linear, opacity 250ms 50ms linear;
+  -o-transition: height 250ms 250ms linear, padding 0ms 250ms linear, opacity 250ms 50ms linear;
+  transition: height 250ms 250ms linear, padding 0ms 250ms linear, opacity 250ms 50ms linear;
 }
-.collapse .open {
-  -webkit-animation: displayContent 0.3s linear 0s normal 1 forwards;
-          animation: displayContent 0.3s linear 0s normal 1 forwards;
+.collapse .collapse-input {
+  display: none;
 }
-.collapse .close {
-  -webkit-animation: hideContent 0.3s linear 0s normal 1 forwards;
-          animation: hideContent 0.3s linear 0s normal 1 forwards;
+.collapse .collapse-input:checked ~ label > .collapse-content {
+  padding: 10px;
+  height: 150px;
+  opacity: 1;
+  -webkit-transition-duration: 250ms, 0ms, 500ms;
+       -o-transition-duration: 250ms, 0ms, 500ms;
+          transition-duration: 250ms, 0ms, 500ms;
+  -webkit-transition-delay: 0s, 0ms, 250ms;
+       -o-transition-delay: 0s, 0ms, 250ms;
+          transition-delay: 0s, 0ms, 250ms;
+}
+.collapse .collapse-input:checked ~ label > .collapse-title > img {
+  -webkit-transform: rotateZ(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotateZ(180deg);
+}
+.collapse .collapse-input:not(checked) ~ label > .collapse-content {
+  opacity: 0;
+  height: 0px;
 }

@@ -12,18 +12,6 @@ import { Rating } from "../rating/rating.jsx";
 //Import feuille de style
 import "../../style/CSS/card.css";
 
-//Import du module "styled-component"
-import styled from "styled-components";
-
-const DivContainerImg = styled.div`
-  width: 100%;
-  height: 60%;
-  border-radius: 10px;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url(${({ url }) => url});
-`;
 
 function Card({ cover, title, rating, name, id }) {
   let logementId = id.toString();
@@ -31,13 +19,22 @@ function Card({ cover, title, rating, name, id }) {
 
   return (
     <Link className="card" to={urlLogement}>
-      <DivContainerImg url={cover}></DivContainerImg>
+      <img
+        className="card__img"
+        src={cover}
+        alt="vignette de presentation du logement"
+      ></img>
+
       <p className="card__name">
         {name} <span>vous propose:</span>
       </p>
+
       <p className="card__title">{title}</p>
 
-      <Rating className="card__rating" valuerating={rating} totalrating={5} />
+      <div className="card__rating">
+        <Rating valuerating={rating} totalrating={5} />
+      </div>
+      
     </Link>
   );
 }

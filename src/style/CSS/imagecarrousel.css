@@ -1,9 +1,8 @@
 .image-carrousel {
-  display: block;
-  max-width: 1240px;
-  max-height: 415px;
   width: 335px;
   height: 255px;
+  max-width: 1240px;
+  max-height: 415px;
   border-radius: 10px;
   -o-object-fit: cover;
      object-fit: cover;

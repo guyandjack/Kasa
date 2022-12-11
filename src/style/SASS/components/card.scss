@@ -7,6 +7,7 @@
 @import "../utils/mixins/responsive/responsive.scss";
 
 .card {
+  position:relative;
   display: flex;
   flex-flow: column;
   justify-content: space-between;
@@ -17,9 +18,10 @@
   margin: 10px auto;
   border-radius: 10px;
   padding: 10px;
+  overflow: hidden;
   background: linear-gradient(
     180deg,
-    map-get($colors-rule, primary-color) 0%,
+    map-get($colors-rule, primary-color) 50%,
     map-get($colors-rule, bg-dark) 100%
   );
   font-size: 18px;
@@ -52,13 +54,43 @@
     margin: 25px;
   }
 
+  &__img, &__name, &__title, &__rating{
+    position:absolute;
+    
+  }
+
+  &__img{
+    top:0%;
+    left: 0%;
+    width:100%;
+    height: 60%;
+    
+  }
+
   &__name {
+    top:65%;
+    left: 10px;
     & > span {
       font-size: 16px;
     }
   }
 
-  &__rating {
-    align-self: flex-start;
+  &__title{
+    top: 75%;
+    left: 10px;
+   
   }
+
+  &__rating{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    top:90%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+  }
+
+ 
 }

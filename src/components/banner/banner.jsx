@@ -9,40 +9,14 @@ import { urlImgBanner } from "../../data/imgbanner/imgbanner.js";
 //Import feuille de style
 import "../../style/CSS/banner.css";
 
-//Import du module "styled-components"
-import styled from "styled-components";
 
-
-const StyledBanner = styled.div`
-
-  height: ${({ $bannerHeight }) => $bannerHeight};
-
-  transition: height 250ms linear;
-
-  &::before {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    border-radius: 25px;
-    content: "";
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url(${({ $bannerImage }) => $bannerImage});
-    opacity: 0.7;
-  }
-`;
-
-function Banner({ pagename, text, height }) {
-
+function Banner({ pagename, text }) {
+    
   const [sizeScreen, setSizeScreen] = useState(window.innerWidth);
 
   function getTypeScreen() {
-
     if (sizeScreen >= 0 && sizeScreen <= 768) {
-      return "large";
+      return "medium";
     }
 
     if (sizeScreen >= 769 && sizeScreen <= 992) {
@@ -56,7 +30,6 @@ function Banner({ pagename, text, height }) {
     if (sizeScreen >= 1501) {
       return "xxlarge";
     }
-    
   }
 
   let typeScreen = getTypeScreen();
@@ -64,11 +37,16 @@ function Banner({ pagename, text, height }) {
 
   window.addEventListener("resize", () => setSizeScreen(window.innerWidth));
 
-  return (
-    <StyledBanner id="banner" $bannerHeight={height} $bannerImage={imgUrl}>
-      {text ? <p id="banner__text">{text}</p> : null}
-    </StyledBanner>
+    return (
+      
+    <div className="banner" >
+          
+        <div className="banner__backgroundcolor"></div>
+        <img className="banner__img" src={imgUrl} alt=""></img>
+        {text ? <p className="banner__text">{text}</p> : null}
+      
+    </div>
   );
 }
 
-export { Banner };
+export {Banner}

@@ -19,7 +19,7 @@ function Footer() {
           alt="logo de l' agenec kasa"
         ></img>
       </Link>
-      <p className="footer__text">c 2020 Kasa. All rights reserved</p>
+      <p className="footer__text">© 2020 Kasa. All rights reserved</p>
     </footer>
   );
 }
