@@ -3,7 +3,7 @@
 //Import de la charte de couleur
 @import "../utils/colors-rule/colors-rule.scss";
 
-//Import des mixin qui gerent le responsive design
+//Import des "mixinS" qui gerent le responsive design
 @import "../utils/mixins/responsive/responsive.scss";
 
 .card {
@@ -15,7 +15,7 @@
 
   width: 335px;
   height: 255px;
-  margin: 10px auto;
+  margin: 10px 0px;
   border-radius: 10px;
   padding: 10px;
   overflow: hidden;
@@ -33,25 +33,25 @@
   @include medium-screen {
     width: 340px;
     height: 280px;
-    margin: 10px;
+    margin: 10px 0px;
   }
   //responsive large screen
   @include large-screen {
     width: 340px;
     height: 300px;
-    margin: 15px;
+    margin: 15px 0px;
   }
   //responsive x-large screen
   @include x-large-screen {
     width: 340px;
     height: 340px;
-    margin: 20px;
+    margin: 20px 0px;
   }
   //responsive xx-large screen
   @include xx-large-screen {
     width: 350px;
     height: 350px;
-    margin: 25px;
+    margin: 25px 0px;
   }
 
   &__img, &__name, &__title, &__rating{

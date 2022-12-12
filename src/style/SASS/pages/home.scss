@@ -18,24 +18,25 @@
     align-items: center;
 
     width: 100%;
-
+    
+    
     //responsive large screen
     @include large-screen {
       flex-flow: row wrap;
-      justify-content: space-around;
+      justify-content: space-between;
     }
 
     //responsive x-large screen
     @include x-large-screen {
       flex-flow: row wrap;
-      justify-content: space-around;
+      justify-content: space-between;
       
     }
 
     //responsive xx-large screen
     @include xx-large-screen {
       flex-flow: row wrap;
-      justify-content: space-around;
+      justify-content: space-between;
       
     }
   }

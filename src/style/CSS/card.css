@@ -15,7 +15,7 @@
           align-items: center;
   width: 335px;
   height: 255px;
-  margin: 10px auto;
+  margin: 10px 0px;
   border-radius: 10px;
   padding: 10px;
   overflow: hidden;
@@ -32,28 +32,28 @@
   .card {
     width: 340px;
     height: 280px;
-    margin: 10px;
+    margin: 10px 0px;
   }
 }
 @media screen and (min-width: 769px) and (max-width: 992px) {
   .card {
     width: 340px;
     height: 300px;
-    margin: 15px;
+    margin: 15px 0px;
   }
 }
 @media screen and (min-width: 993px) and (max-width: 1500px) {
   .card {
     width: 340px;
     height: 340px;
-    margin: 20px;
+    margin: 20px 0px;
   }
 }
 @media screen and (min-width: 1501px) {
   .card {
     width: 350px;
     height: 350px;
-    margin: 25px;
+    margin: 25px 0px;
   }
 }
 .card__img, .card__name, .card__title, .card__rating {

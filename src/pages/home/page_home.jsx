@@ -5,7 +5,7 @@
 import { Banner } from "../../components/banner/banner.jsx";
 import { Card } from "../../components/card/card.jsx";
 
-//Import de la list de logement
+//Import de la liste de logements
 import { logements } from "../../data/logements.js";
 
 //Import des feuilles de style
@@ -19,8 +19,7 @@ function PageHome() {
       <Banner
         pagename="home"
         text="Chez vous, partout et ailleurs"
-        height="111px"
-      />
+    />
 
       <ul className="home__logements">
         {logements.map((room) => {
