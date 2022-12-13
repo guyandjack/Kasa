@@ -5,7 +5,7 @@ import "../../style/CSS/tag.css"
 
 //Function "Tag"
 
-function Tag({tagname, classtag}) {
+function Tag({tagname}) {
 
     return (
     

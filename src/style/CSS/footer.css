@@ -44,26 +44,3 @@
 .footer__text {
   color: #FFFFFF;
 }
-.footer #copyright {
-  font-size: 1em;
-}
-@media screen and (min-width: 576px) and (max-width: 768px) {
-  .footer #copyright {
-    font-size: 1.2em;
-  }
-}
-@media screen and (min-width: 769px) and (max-width: 992px) {
-  .footer #copyright {
-    font-size: 1.4em;
-  }
-}
-@media screen and (min-width: 993px) and (max-width: 1500px) {
-  .footer #copyright {
-    font-size: 1.6em;
-  }
-}
-@media screen and (min-width: 1501px) {
-  .footer #copyright {
-    font-size: 5em;
-  }
-}

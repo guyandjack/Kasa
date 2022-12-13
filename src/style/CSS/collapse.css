@@ -158,9 +158,9 @@
   -webkit-transition-duration: 250ms, 0ms, 500ms;
        -o-transition-duration: 250ms, 0ms, 500ms;
           transition-duration: 250ms, 0ms, 500ms;
-  -webkit-transition-delay: 0s, 0ms, 250ms;
-       -o-transition-delay: 0s, 0ms, 250ms;
-          transition-delay: 0s, 0ms, 250ms;
+  -webkit-transition-delay: 0ms, 0ms, 250ms;
+       -o-transition-delay: 0ms, 0ms, 250ms;
+          transition-delay: 0ms, 0ms, 250ms;
 }
 .collapse .collapse-input:checked ~ label > .collapse-title > img {
   -webkit-transform: rotateZ(180deg);

@@ -18,7 +18,7 @@ function PageApropos() {
   return (
     <div className="apropos">
       
-      <Banner pagename="apropos" text="" height="223px" />
+      <Banner pagename="apropos" text="" />
       {contentCollapse.map((element) => {
         return (
           <Collapse

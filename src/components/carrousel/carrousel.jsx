@@ -52,7 +52,7 @@ function Carrousel({ slidepicture }) {
       //evite le rechargement des images lors du re-render produit par le useEffect
       let pictures = preLoad(slidepicture);
       pictures.then((result) => {
-        //simule un temps de chargement de deux secondes
+        //simule un temps de chargement de deux secondes pour verifier le loader
         setTimeout(function () {
           setPreLoadedPicture(result)
         }, 1000 );
@@ -70,7 +70,7 @@ function Carrousel({ slidepicture }) {
   //Recupere l' image pour le carrousel suite à un click "gauche"
   function clickLeft() {
     async function changeClassName() {
-      setClassName(" slideFromLeft");
+      setClassName("slideFromLeft");
     }
 
     changeClassName()
@@ -102,7 +102,7 @@ function Carrousel({ slidepicture }) {
   //Recupere l'image pour le carrousel suite à un click "droit"
   function clickRight() {
     async function changeClassName() {
-      setClassName(" slideFromRight");
+      setClassName("slideFromRight");
     }
 
     changeClassName()
@@ -135,11 +135,11 @@ function Carrousel({ slidepicture }) {
       <div className="carrousel">
         {displayChevron ? (
           <div className="carrousel__container-chevron">
-            <div className="chevron" value="left" onClick={() => clickLeft()}>
+            <div className="chevron"  onClick={() => clickLeft()}>
               <img src={flecheGauche} alt="fleche defilement à gauche"></img>
             </div>
 
-            <div className="chevron" value="right" onClick={() => clickRight()}>
+            <div className="chevron"  onClick={() => clickRight()}>
               <img src={flecheDroite} alt="fleche defilement à droite"></img>
             </div>
           </div>
@@ -152,7 +152,6 @@ function Carrousel({ slidepicture }) {
 
         {preLoadedPicture.length > 0 ? (
           <BulletPoint
-            className="carrousel__bulletpoint"
             count={increment}
             countTotal={preLoadedPicture.length - 1}
             setindex={setIncrement}

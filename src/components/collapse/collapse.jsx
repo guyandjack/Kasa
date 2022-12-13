@@ -22,9 +22,10 @@ function Collapse({ idSelect, title, content, isList }) {
       ></input>
 
       <label htmlFor={idSelect} className="collapse-label">
+        
         <span className="collapse-title">
           {title}
-          <img src={chevronHaut} alt="afficher le contenu"></img>
+          <img src={chevronHaut} alt="afficher ou cacher le contenu"></img>
         </span>
         
           {isList ? (

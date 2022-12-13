@@ -18,7 +18,7 @@ function Header() {
             <img
               className="header__logo__img"
               src={logo}
-              alt="logo de l' agence Casa"
+              alt="logo de l'agence Kasa"
             ></img>
           </Link>
         </div>
