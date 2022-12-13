@@ -1,5 +1,5 @@
 // Fonction qui permet de precharger les images dans le cache
-//arg1: tableau contenent les images à chargées
+//arg1: tableau contenant les images à chargées
 
 //Import des feuilles de style
 import "../../style/CSS/imagecarrousel.css";
@@ -9,9 +9,7 @@ async  function preLoad(arrayOfPictures) {
 
     //Variables de fonctionnement
     let preLoadedPictures = [];
-    let errorMsg = "erreur de chargement, image non disponible";
-
-    
+    let errorMsg = "image non disponible";
 
     function createComponent(urlImg) {
          
@@ -21,7 +19,7 @@ async  function preLoad(arrayOfPictures) {
                <img
                  class="image-carrousel"
                  src={urlImg}
-                 alt="contenu du carroussel"
+                 alt={errorMsg}
                />
              );
              imageSlider.onload = resolve(imageSlider);

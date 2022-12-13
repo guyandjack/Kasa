@@ -20,9 +20,7 @@ import "../../style/CSS/carrousel.css";
 
 
 
-
-
-//Fonction "CarrouselBeta"
+//Fonction "Carrousel"
 
 function Carrousel({ slidepicture }) {
 
@@ -40,31 +38,32 @@ function Carrousel({ slidepicture }) {
 
     // Determine si les images sont en train de chargées
     useEffect(() => {
-        if (preLoadedPicture.length > 0) {
+        if (preLoadedPicture.length === slidepicture.length) {
         setIsLoading(false);
         }
     }, [preLoadedPicture]);
 
     //Variable et constante de fonctionnement
-    let displayChevron = false;
+    let displayChevron = true;
     
     //Prechargement des images, necessaires au carrousel.
        
-    if(preLoadedPicture.length === 0) {
+    if (preLoadedPicture.length !== slidepicture.length) {
       //evite le rechargement des images lors du re-render produit par le useEffect
       let pictures = preLoad(slidepicture);
-      pictures
-        .then((result) => {
-          console.log(result)
-          setPreLoadedPicture(result);
-        })
+      pictures.then((result) => {
+        //simule un temps de chargement de deux secondes
+        setTimeout(function () {
+          setPreLoadedPicture(result)
+        }, 1000 );
         
+      });
     }
    
     
   //Affichage conditionnel des fleches de défilement 
-   if (preLoadedPicture.length >= 1) {
-        displayChevron = true;
+   if (preLoadedPicture.length < 2 ) {
+        displayChevron = false;
     }  
     
 
@@ -134,23 +133,20 @@ function Carrousel({ slidepicture }) {
 
     return (
       <div className="carrousel">
+        {displayChevron ? (
+          <div className="carrousel__container-chevron">
+            <div className="chevron" value="left" onClick={() => clickLeft()}>
+              <img src={flecheGauche} alt="fleche defilement à gauche"></img>
+            </div>
+
+            <div className="chevron" value="right" onClick={() => clickRight()}>
+              <img src={flecheDroite} alt="fleche defilement à droite"></img>
+            </div>
+          </div>
+        ) : null}
         <div className={className}>
           {preLoadedPicture[increment]}
-          {displayChevron ? (
-            <div className="carrousel__container-chevron">
-              <div className="chevron" value="left" onClick={() => clickLeft()}>
-                <img src={flecheGauche} alt="fleche defilement à gauche"></img>
-              </div>
-
-              <div
-                className="chevron"
-                value="right"
-                onClick={() => clickRight()}
-              >
-                <img src={flecheDroite} alt="fleche defilement à droite"></img>
-              </div>
-            </div>
-          ) : null}
+          
           <Loader className="carrousel__loader" loading={isLoading} />
         </div>
 
