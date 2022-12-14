@@ -135,6 +135,7 @@ function Carrousel({ slidepicture }) {
       <div className="carrousel">
         {displayChevron ? (
           <div className="carrousel__container-chevron">
+            
             <div className="chevron"  onClick={() => clickLeft()}>
               <img src={flecheGauche} alt="fleche defilement à gauche"></img>
             </div>
@@ -142,12 +143,13 @@ function Carrousel({ slidepicture }) {
             <div className="chevron"  onClick={() => clickRight()}>
               <img src={flecheDroite} alt="fleche defilement à droite"></img>
             </div>
+            
           </div>
         ) : null}
         <div className={className}>
           {preLoadedPicture[increment]}
           
-          <Loader className="carrousel__loader" loading={isLoading} />
+          <Loader loading={isLoading} />
         </div>
 
         {preLoadedPicture.length > 0 ? (
