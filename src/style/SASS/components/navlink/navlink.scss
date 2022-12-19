@@ -1,0 +1,13 @@
+//Feuille de style composant "NavLink"
+
+//Import de la charte de couleur
+@import "../../utils/colors-rule/colors-rule.scss";
+
+.actif{
+    border-bottom: 2px solid map-get($colors-rule, primary-color);
+}
+
+.no-actif{
+
+    border-bottom: 2px solid lighten(map-get($colors-rule, primary-color), 100%);
+}

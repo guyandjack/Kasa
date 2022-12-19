@@ -101,6 +101,7 @@
         padding: 0px;
         border-radius: 10px;
         background-color: map-get($colors-rule, bg-light);
+        color: map-get($colors-rule, primary-color);
         overflow: hidden;
         transition:height 250ms 250ms linear, padding 0ms 250ms linear , opacity 250ms 50ms linear;
     }

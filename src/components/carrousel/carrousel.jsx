@@ -6,7 +6,7 @@ import { useState, useEffect, React } from "react";
 
 //Import des composants enfants
 import { Loader } from "../loader/loader.jsx";
-import { BulletPoint } from "../bulletpoint/bulletpoint.jsx";
+
 
 //Import de fonctions
 import { preLoad } from "../../utils/fonction/preload.js";
@@ -135,30 +135,28 @@ function Carrousel({ slidepicture }) {
       <div className="carrousel">
         {displayChevron ? (
           <div className="carrousel__container-chevron">
-            
-            <div className="chevron"  onClick={() => clickLeft()}>
+            <div className="chevron" onClick={() => clickLeft()}>
               <img src={flecheGauche} alt="fleche defilement à gauche"></img>
             </div>
 
-            <div className="chevron"  onClick={() => clickRight()}>
+            <div className="chevron" onClick={() => clickRight()}>
               <img src={flecheDroite} alt="fleche defilement à droite"></img>
             </div>
-            
           </div>
         ) : null}
+
         <div className={className}>
           {preLoadedPicture[increment]}
-          
           <Loader loading={isLoading} />
         </div>
 
         {preLoadedPicture.length > 0 ? (
-          <BulletPoint
-            count={increment}
-            countTotal={preLoadedPicture.length - 1}
-            setindex={setIncrement}
-          />
+          <div className="image-counter">
+            {increment + 1} / {preLoadedPicture.length}
+          </div>
         ) : null}
+
+        
       </div>
     );
 }

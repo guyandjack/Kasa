@@ -143,6 +143,7 @@
   padding: 0px;
   border-radius: 10px;
   background-color: #F7F7F7;
+  color: #FF6060;
   overflow: hidden;
   -webkit-transition: height 250ms 250ms linear, padding 0ms 250ms linear, opacity 250ms 50ms linear;
   -o-transition: height 250ms 250ms linear, padding 0ms 250ms linear, opacity 250ms 50ms linear;

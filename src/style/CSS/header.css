@@ -77,7 +77,6 @@
 .header__nav__li {
   margin-left: 20px;
   padding: 5px;
-  border-bottom: 2px solid transparent;
   color: #FF6060;
 }
 @media screen and (min-width: 769px) and (max-width: 992px) {

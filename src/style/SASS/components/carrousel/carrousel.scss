@@ -107,8 +107,16 @@
         transform: scale(2);
       }
     }
-  }
 
+  }
+  
+  .image-counter{
+    position:absolute;
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: map-get($colors-rule, text-light );
+  }
   
   
 }

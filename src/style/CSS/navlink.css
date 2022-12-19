@@ -1,0 +1,7 @@
+.actif {
+  border-bottom: 2px solid #FF6060;
+}
+
+.no-actif {
+  border-bottom: 2px solid white;
+}

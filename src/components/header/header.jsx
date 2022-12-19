@@ -6,10 +6,21 @@ import { Link } from "react-router-dom";
 //Import de logo
 import logo from "../../asset/logo-kasa-header.png";
 
+import { useLocation } from 'react-router-dom';
+
+//Import composants enfants
+import { NavLink } from "../nav_link/nav_link.jsx";
+
+
+  
+
 //Import feuille de style
 import "../../style/SASS/components/header/header.scss";
 
 function Header() {
+
+  let location = useLocation();
+  console.log(location)
   return (
     <header>
       <nav className="header">
@@ -25,14 +36,14 @@ function Header() {
 
         <ul className="header__nav">
           <li>
-            <Link className="header__nav__li" to="/">
+            <NavLink uri="/">
               Accueil
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link className="header__nav__li" to="/apropos">
+            <NavLink uri="/apropos">
               A propos
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>

@@ -133,6 +133,15 @@
             transform: scale(2);
   }
 }
+.carrousel .image-counter {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #FFFFFF;
+}
 
 .slideFromLeft {
   -webkit-animation: slideFromLeft 300ms linear;
